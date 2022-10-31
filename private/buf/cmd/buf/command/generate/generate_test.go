@@ -371,19 +371,12 @@ func testCompareGeneratedStubs(
 			filePath,
 		)
 	}
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		internaltesting.NewEnvFunc(t),
-		nil,
-		nil,
-		genFlags...,
-	)
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, internaltesting.NewEnvFunc(t), os.DirFS("/"), nil, nil, genFlags...)
 	storageosProvider := storageos.NewProvider(storageos.ProviderWithSymlinks())
 	actualReadWriteBucket, err := storageosProvider.NewReadWriteBucket(
 		actualProtocDir,
@@ -493,37 +486,21 @@ func testCompareGeneratedStubsArchive(
 }
 
 func testRunSuccess(t *testing.T, args ...string) {
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		internaltesting.NewEnvFunc(t),
-		nil,
-		nil,
-		args...,
-	)
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, internaltesting.NewEnvFunc(t), os.DirFS("/"), nil, nil, args...)
 }
 
 func testRunStdoutStderr(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, expectedStderr string, args ...string) {
-	appcmdtesting.RunCommandExitCodeStdoutStderr(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		expectedExitCode,
-		expectedStdout,
-		expectedStderr,
-		internaltesting.NewEnvFunc(t),
-		stdin,
-		args...,
-	)
+	appcmdtesting.RunCommandExitCodeStdoutStderr(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, expectedExitCode, expectedStdout, expectedStderr, internaltesting.NewEnvFunc(t), os.DirFS("/"), stdin, args...)
 }
 
 func newExternalConfigV1String(t *testing.T, plugins []*testPluginInfo, out string) string {

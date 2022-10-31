@@ -61,26 +61,12 @@ type testPluginInfo struct {
 func TestOverlap(t *testing.T) {
 	t.Parallel()
 	// https://github.com/bufbuild/buf/issues/113
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		nil,
-		nil,
-		nil,
-		"-I",
-		filepath.Join("testdata", "overlap", "a"),
-		"-I",
-		filepath.Join("testdata", "overlap", "b"),
-		"-o",
-		app.DevNullFilePath,
-		filepath.Join("testdata", "overlap", "a", "1.proto"),
-		filepath.Join("testdata", "overlap", "b", "2.proto"),
-	)
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, nil, os.DirFS("/"), nil, nil, "-I", filepath.Join("testdata", "overlap", "a"), "-I", filepath.Join("testdata", "overlap", "b"), "-o", app.DevNullFilePath, filepath.Join("testdata", "overlap", "a", "1.proto"), filepath.Join("testdata", "overlap", "b", "2.proto"))
 }
 
 func TestComparePrintFreeFieldNumbersGoogleapis(t *testing.T) {
@@ -100,26 +86,19 @@ func TestComparePrintFreeFieldNumbersGoogleapis(t *testing.T) {
 		actualProtocStdout,
 		fmt.Sprintf("--%s", printFreeFieldNumbersFlagName),
 	)
-	appcmdtesting.RunCommandSuccessStdout(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
+	appcmdtesting.RunCommandSuccessStdout(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, actualProtocStdout.String(), nil, os.DirFS("/"), nil, append(
+		[]string{
+			"-I",
+			googleapisDirPath,
+			fmt.Sprintf("--%s", printFreeFieldNumbersFlagName),
 		},
-		actualProtocStdout.String(),
-		nil,
-		nil,
-		append(
-			[]string{
-				"-I",
-				googleapisDirPath,
-				fmt.Sprintf("--%s", printFreeFieldNumbersFlagName),
-			},
-			filePaths...,
-		)...,
-	)
+		filePaths...,
+	)...)
 }
 
 func TestCompareOutputGoogleapis(t *testing.T) {
@@ -245,31 +224,24 @@ func testInsertionPointMixedPathsSuccess(t *testing.T, runner command.Runner, re
 		protocFlags...,
 	)
 	require.Error(t, err)
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		func(string) map[string]string {
-			return map[string]string{
-				"PATH": os.Getenv("PATH"),
-			}
-		},
-		nil,
-		nil,
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, func(string) map[string]string {
+		return map[string]string{
+			"PATH": os.Getenv("PATH"),
+		}
+	}, os.DirFS("/"), nil, nil, append(
 		append(
-			append(
-				protocFlags,
-				"-I",
-				dirPath,
-				"--by-dir",
-			),
-			filePaths...,
-		)...,
-	)
+			protocFlags,
+			"-I",
+			dirPath,
+			"--by-dir",
+		),
+		filePaths...,
+	)...)
 }
 
 func testCompareGeneratedStubs(
@@ -308,31 +280,24 @@ func testCompareGeneratedStubs(
 			bufProtocPluginFlags = append(bufProtocPluginFlags, fmt.Sprintf("--%s_opt=%s", plugin.name, plugin.opt))
 		}
 	}
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		func(string) map[string]string {
-			return map[string]string{
-				"PATH": os.Getenv("PATH"),
-			}
-		},
-		nil,
-		nil,
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, func(string) map[string]string {
+		return map[string]string{
+			"PATH": os.Getenv("PATH"),
+		}
+	}, os.DirFS("/"), nil, nil, append(
 		append(
-			append(
-				bufProtocPluginFlags,
-				"-I",
-				dirPath,
-				"--by-dir",
-			),
-			filePaths...,
-		)...,
-	)
+			bufProtocPluginFlags,
+			"-I",
+			dirPath,
+			"--by-dir",
+		),
+		filePaths...,
+	)...)
 	storageosProvider := storageos.NewProvider(storageos.ProviderWithSymlinks())
 	actualReadWriteBucket, err := storageosProvider.NewReadWriteBucket(
 		actualProtocDir,
@@ -396,31 +361,24 @@ func testCompareGeneratedStubsArchive(
 			bufProtocPluginFlags = append(bufProtocPluginFlags, fmt.Sprintf("--%s_opt=%s", plugin.name, plugin.opt))
 		}
 	}
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
-		},
-		func(string) map[string]string {
-			return map[string]string{
-				"PATH": os.Getenv("PATH"),
-			}
-		},
-		nil,
-		nil,
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, func(string) map[string]string {
+		return map[string]string{
+			"PATH": os.Getenv("PATH"),
+		}
+	}, os.DirFS("/"), nil, nil, append(
 		append(
-			append(
-				bufProtocPluginFlags,
-				"-I",
-				dirPath,
-				"--by-dir",
-			),
-			filePaths...,
-		)...,
-	)
+			bufProtocPluginFlags,
+			"-I",
+			dirPath,
+			"--by-dir",
+		),
+		filePaths...,
+	)...)
 	actualData, err := os.ReadFile(actualProtocFile)
 	require.NoError(t, err)
 	actualReadWriteBucket := storagemem.NewReadWriteBucket()
@@ -471,26 +429,19 @@ func testGetBufProtocFileDescriptorSet(t *testing.T, dirPath string) *descriptor
 
 func testGetBufProtocFileDescriptorSetBytes(t *testing.T, dirPath string) []byte {
 	stdout := bytes.NewBuffer(nil)
-	appcmdtesting.RunCommandSuccess(
-		t,
-		func(name string) *appcmd.Command {
-			return NewCommand(
-				name,
-				appflag.NewBuilder(name),
-			)
+	appcmdtesting.RunCommandSuccess(t, func(name string) *appcmd.Command {
+		return NewCommand(
+			name,
+			appflag.NewBuilder(name),
+		)
+	}, nil, os.DirFS("/"), nil, stdout, append(
+		[]string{
+			"-I",
+			dirPath,
+			"-o",
+			"-",
 		},
-		nil,
-		nil,
-		stdout,
-		append(
-			[]string{
-				"-I",
-				dirPath,
-				"-o",
-				"-",
-			},
-			buftesting.GetProtocFilePaths(t, dirPath, 100)...,
-		)...,
-	)
+		buftesting.GetProtocFilePaths(t, dirPath, 100)...,
+	)...)
 	return stdout.Bytes()
 }

@@ -17,6 +17,7 @@ package workspacetest
 import (
 	"fmt"
 	"io"
+	os2 "os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -207,36 +208,19 @@ func TestWorkspaceWithProtoFileRef(t *testing.T) {
 }
 
 func testRunStdout(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, args ...string) {
-	appcmdtesting.RunCommandExitCodeStdout(
-		t,
-		func(use string) *appcmd.Command { return buf.NewRootCommand(use) },
-		expectedExitCode,
-		expectedStdout,
-		func(use string) map[string]string {
-			return map[string]string{
-				useEnvVar(use, "CACHE_DIR"): "cache",
-			}
-		},
-		stdin,
-		args...,
-	)
+	appcmdtesting.RunCommandExitCodeStdout(t, func(use string) *appcmd.Command { return buf.NewRootCommand(use) }, expectedExitCode, expectedStdout, func(use string) map[string]string {
+		return map[string]string{
+			useEnvVar(use, "CACHE_DIR"): "cache",
+		}
+	}, os2.DirFS("/"), stdin, args...)
 }
 
 func testRunStdoutStderr(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, expectedStderr string, args ...string) {
-	appcmdtesting.RunCommandExitCodeStdoutStderr(
-		t,
-		func(use string) *appcmd.Command { return buf.NewRootCommand(use) },
-		expectedExitCode,
-		expectedStdout,
-		expectedStderr,
-		func(use string) map[string]string {
-			return map[string]string{
-				useEnvVar(use, "CACHE_DIR"): "cache",
-			}
-		},
-		stdin,
-		args...,
-	)
+	appcmdtesting.RunCommandExitCodeStdoutStderr(t, func(use string) *appcmd.Command { return buf.NewRootCommand(use) }, expectedExitCode, expectedStdout, expectedStderr, func(use string) map[string]string {
+		return map[string]string{
+			useEnvVar(use, "CACHE_DIR"): "cache",
+		}
+	}, os2.DirFS("/"), stdin, args...)
 }
 
 func useEnvVar(use string, suffix string) string {

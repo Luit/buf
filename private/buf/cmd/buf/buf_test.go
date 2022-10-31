@@ -19,6 +19,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -907,16 +908,7 @@ google/protobuf/descriptor.proto`,
 func TestLsFilesImage1(t *testing.T) {
 	t.Parallel()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-",
-		filepath.Join("testdata", "success"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-", filepath.Join("testdata", "success"))
 	testRunStdout(
 		t,
 		stdout,
@@ -932,16 +924,7 @@ func TestLsFilesImage1(t *testing.T) {
 func TestLsFilesImage2(t *testing.T) {
 	t.Parallel()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-",
-		filepath.Join("testdata", "success"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-", filepath.Join("testdata", "success"))
 	testRunStdout(
 		t,
 		stdout,
@@ -959,17 +942,7 @@ func TestLsFilesImage2(t *testing.T) {
 func TestLsFilesImage3(t *testing.T) {
 	t.Parallel()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"--exclude-imports",
-		"-o",
-		"-",
-		filepath.Join("testdata", "success"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "--exclude-imports", "-o", "-", filepath.Join("testdata", "success"))
 	testRunStdout(
 		t,
 		stdout,
@@ -985,16 +958,7 @@ func TestLsFilesImage3(t *testing.T) {
 func TestLsFilesImage4(t *testing.T) {
 	t.Parallel()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-",
-		filepath.Join("testdata", "success", "buf", "buf.proto"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-", filepath.Join("testdata", "success", "buf", "buf.proto"))
 	testRunStdout(
 		t,
 		stdout,
@@ -1010,16 +974,7 @@ func TestLsFilesImage4(t *testing.T) {
 func TestLsFilesImage5(t *testing.T) {
 	t.Parallel()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-",
-		filepath.Join("testdata", "success", "buf", "buf.proto"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-", filepath.Join("testdata", "success", "buf", "buf.proto"))
 	testRunStdout(
 		t,
 		stdout,
@@ -1055,45 +1010,18 @@ func TestImageConvertRoundtripBinaryJSONBinary(t *testing.T) {
 	t.Parallel()
 
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-",
-		filepath.Join("testdata", "customoptions1"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-", filepath.Join("testdata", "customoptions1"))
 
 	binary1 := stdout.Bytes()
 	require.NotEmpty(t, binary1)
 
 	stdin := stdout
 	stdout = bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		stdin,
-		stdout,
-		"build",
-		"-",
-		"-o",
-		"-#format=json",
-	)
+	testRun(t, 0, os.DirFS("/"), stdin, stdout, "build", "-", "-o", "-#format=json")
 
 	stdin = stdout
 	stdout = bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		stdin,
-		stdout,
-		"build",
-		"-#format=json",
-		"-o",
-		"-",
-	)
+	testRun(t, 0, os.DirFS("/"), stdin, stdout, "build", "-#format=json", "-o", "-")
 
 	require.Equal(t, binary1, stdout.Bytes())
 }
@@ -1102,45 +1030,18 @@ func TestImageConvertRoundtripJSONBinaryJSON(t *testing.T) {
 	t.Parallel()
 
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"build",
-		"-o",
-		"-#format=json",
-		filepath.Join("testdata", "customoptions1"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "build", "-o", "-#format=json", filepath.Join("testdata", "customoptions1"))
 
 	json1 := stdout.Bytes()
 	require.NotEmpty(t, json1)
 
 	stdin := stdout
 	stdout = bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		stdin,
-		stdout,
-		"build",
-		"-#format=json",
-		"-o",
-		"-",
-	)
+	testRun(t, 0, os.DirFS("/"), stdin, stdout, "build", "-#format=json", "-o", "-")
 
 	stdin = stdout
 	stdout = bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		stdin,
-		stdout,
-		"build",
-		"-",
-		"-o",
-		"-#format=json",
-	)
+	testRun(t, 0, os.DirFS("/"), stdin, stdout, "build", "-", "-o", "-#format=json")
 
 	require.Equal(t, json1, stdout.Bytes())
 }
@@ -1732,17 +1633,7 @@ func TestConvertWithImage(t *testing.T) {
 		require.NoError(t, err)
 		defer stdin.Close()
 		stdout := bytes.NewBuffer(nil)
-		testRun(
-			t,
-			0,
-			stdin,
-			stdout,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-		)
+		testRun(t, 0, os.DirFS("/"), stdin, stdout, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo")
 		assert.JSONEq(t, `{"one":"55"}`, stdout.String())
 	})
 
@@ -1837,19 +1728,7 @@ func TestConvertOutput(t *testing.T) {
 		require.NoError(t, err)
 		defer stdin.Close()
 		stdout := bytes.NewBuffer(nil)
-		testRun(
-			t,
-			0,
-			stdin,
-			stdout,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--to",
-			"-",
-		)
+		testRun(t, 0, os.DirFS("/"), stdin, stdout, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--to", "-")
 		assert.JSONEq(t, `{"one":"55"}`, stdout.String())
 	})
 }
@@ -2076,17 +1955,7 @@ func TestFormatSingleFile(t *testing.T) {
 func TestFormatDiff(t *testing.T) {
 	tempDir := t.TempDir()
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		0,
-		nil,
-		stdout,
-		"format",
-		filepath.Join("testdata", "format", "diff"),
-		"-d",
-		"-o",
-		filepath.Join(tempDir, "formatted"),
-	)
+	testRun(t, 0, os.DirFS("/"), nil, stdout, "format", filepath.Join("testdata", "format", "diff"), "-d", "-o", filepath.Join(tempDir, "formatted"))
 	assert.Contains(
 		t,
 		stdout.String(),
@@ -2111,27 +1980,10 @@ func TestFormatDiff(t *testing.T) {
 // with the --exit-code flag.
 func TestFormatExitCode(t *testing.T) {
 	stdout := bytes.NewBuffer(nil)
-	testRun(
-		t,
-		bufcli.ExitCodeFileAnnotation,
-		nil,
-		stdout,
-		"format",
-		filepath.Join("testdata", "format", "diff"),
-		"--exit-code",
-	)
+	testRun(t, bufcli.ExitCodeFileAnnotation, os.DirFS("/"), nil, stdout, "format", filepath.Join("testdata", "format", "diff"), "--exit-code")
 	assert.NotEmpty(t, stdout.String())
 	stdout = bytes.NewBuffer(nil)
-	testRun(
-		t,
-		bufcli.ExitCodeFileAnnotation,
-		nil,
-		stdout,
-		"format",
-		filepath.Join("testdata", "format", "diff"),
-		"-d",
-		"--exit-code",
-	)
+	testRun(t, bufcli.ExitCodeFileAnnotation, os.DirFS("/"), nil, stdout, "format", filepath.Join("testdata", "format", "diff"), "-d", "--exit-code")
 	assert.NotEmpty(t, stdout.String())
 }
 
@@ -2265,99 +2117,23 @@ func TestConvertRoundTrip(t *testing.T) {
 		stdin := bytes.NewBuffer([]byte(`{"one":"55"}`))
 		encodedMessage := bytes.NewBuffer(nil)
 		decodedMessage := bytes.NewBuffer(nil)
-		testRun(
-			t,
-			0,
-			stdin,
-			encodedMessage,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--from",
-			"-#format=json",
-		)
-		testRun(
-			t,
-			0,
-			encodedMessage,
-			decodedMessage,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-		)
+		testRun(t, 0, os.DirFS("/"), stdin, encodedMessage, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--from", "-#format=json")
+		testRun(t, 0, os.DirFS("/"), encodedMessage, decodedMessage, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo")
 		assert.JSONEq(t, `{"one":"55"}`, decodedMessage.String())
 	})
 	t.Run("stdin and stdout with type specified", func(t *testing.T) {
 		stdin := bytes.NewBuffer([]byte(`{"one":"55"}`))
 		encodedMessage := bytes.NewBuffer(nil)
 		decodedMessage := bytes.NewBuffer(nil)
-		testRun(
-			t,
-			0,
-			stdin,
-			encodedMessage,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--from",
-			"-#format=json",
-			"--to",
-			"-#format=bin",
-		)
-		testRun(
-			t,
-			0,
-			encodedMessage,
-			decodedMessage,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--from",
-			"-#format=bin",
-			"--to",
-			"-#format=json",
-		)
+		testRun(t, 0, os.DirFS("/"), stdin, encodedMessage, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--from", "-#format=json", "--to", "-#format=bin")
+		testRun(t, 0, os.DirFS("/"), encodedMessage, decodedMessage, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--from", "-#format=bin", "--to", "-#format=json")
 		assert.JSONEq(t, `{"one":"55"}`, decodedMessage.String())
 	})
 	t.Run("file output and input", func(t *testing.T) {
 		stdin := bytes.NewBuffer([]byte(`{"one":"55"}`))
 		decodedMessage := bytes.NewBuffer(nil)
-		testRun(
-			t,
-			0,
-			stdin,
-			nil,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--from",
-			"-#format=json",
-			"--to",
-			filepath.Join(tempDir, "decoded_message.bin"),
-		)
-		testRun(
-			t,
-			0,
-			nil,
-			decodedMessage,
-			"beta",
-			"convert",
-			filepath.Join(tempDir, "image.bin"),
-			"--type",
-			"buf.Foo",
-			"--from",
-			filepath.Join(tempDir, "decoded_message.bin"),
-		)
+		testRun(t, 0, os.DirFS("/"), stdin, nil, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--from", "-#format=json", "--to", filepath.Join(tempDir, "decoded_message.bin"))
+		testRun(t, 0, os.DirFS("/"), nil, decodedMessage, "beta", "convert", filepath.Join(tempDir, "image.bin"), "--type", "buf.Foo", "--from", filepath.Join(tempDir, "decoded_message.bin"))
 		assert.JSONEq(t, `{"one":"55"}`, decodedMessage.String())
 	})
 }
@@ -2421,39 +2197,21 @@ func testModInit(t *testing.T, expectedData string, document bool, name string, 
 	if name != "" {
 		args = append(args, "--name", name)
 	}
-	testRun(t, 0, nil, nil, args...)
+	testRun(t, 0, os.DirFS("/"), nil, nil, args...)
 	data, err := os.ReadFile(filepath.Join(tempDir, bufconfig.ExternalConfigV1FilePath))
 	require.NoError(t, err)
 	require.Equal(t, expectedData, string(data))
 }
 
 func testRunStdout(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, args ...string) {
-	appcmdtesting.RunCommandExitCodeStdout(
-		t,
-		func(use string) *appcmd.Command { return NewRootCommand(use) },
-		expectedExitCode,
-		expectedStdout,
-		internaltesting.NewEnvFunc(t),
-		stdin,
-		args...,
-	)
+	appcmdtesting.RunCommandExitCodeStdout(t, func(use string) *appcmd.Command { return NewRootCommand(use) }, expectedExitCode, expectedStdout, internaltesting.NewEnvFunc(t), os.DirFS("/"), stdin, args...)
 }
 
 func testRunStdoutStderr(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, expectedStderr string, args ...string) {
-	appcmdtesting.RunCommandExitCodeStdoutStderr(
-		t,
-		func(use string) *appcmd.Command { return NewRootCommand(use) },
-		expectedExitCode,
-		expectedStdout,
-		expectedStderr,
-		internaltesting.NewEnvFunc(t),
-		stdin,
-		// we do not want warnings to be part of our stderr test calculation
-		append(
-			args,
-			"--no-warn",
-		)...,
-	)
+	appcmdtesting.RunCommandExitCodeStdoutStderr(t, func(use string) *appcmd.Command { return NewRootCommand(use) }, expectedExitCode, expectedStdout, expectedStderr, internaltesting.NewEnvFunc(t), os.DirFS("/"), stdin, append(
+		args,
+		"--no-warn",
+	)...)
 }
 
 func testRunStdoutProfile(t *testing.T, stdin io.Reader, expectedExitCode int, expectedStdout string, args ...string) {
@@ -2487,22 +2245,7 @@ func testRunStdoutFile(t *testing.T, stdin io.Reader, expectedExitCode int, want
 	)
 }
 
-func testRun(
-	t *testing.T,
-	expectedExitCode int,
-	stdin io.Reader,
-	stdout io.Writer,
-	args ...string,
-) {
+func testRun(t *testing.T, expectedExitCode int, fsys fs.FS, stdin io.Reader, stdout io.Writer, args ...string) {
 	stderr := bytes.NewBuffer(nil)
-	appcmdtesting.RunCommandExitCode(
-		t,
-		func(use string) *appcmd.Command { return NewRootCommand(use) },
-		expectedExitCode,
-		internaltesting.NewEnvFunc(t),
-		stdin,
-		stdout,
-		stderr,
-		args...,
-	)
+	appcmdtesting.RunCommandExitCode(t, func(use string) *appcmd.Command { return NewRootCommand(use) }, expectedExitCode, internaltesting.NewEnvFunc(t), fsys, stdin, stdout, stderr, args...)
 }
