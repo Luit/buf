@@ -16,21 +16,17 @@ package app
 
 type container struct {
 	EnvContainer
+	FsContainer
 	StdinContainer
 	StdoutContainer
 	StderrContainer
 	ArgContainer
 }
 
-func newContainer(
-	envContainer EnvContainer,
-	stdinContainer StdinContainer,
-	stdoutContainer StdoutContainer,
-	stderrContainer StderrContainer,
-	argContainer ArgContainer,
-) *container {
+func newContainer(envContainer EnvContainer, fsContainer FsContainer, stdinContainer StdinContainer, stdoutContainer StdoutContainer, stderrContainer StderrContainer, argContainer ArgContainer) *container {
 	return &container{
 		EnvContainer:    envContainer,
+		FsContainer:     fsContainer,
 		StdinContainer:  stdinContainer,
 		StdoutContainer: stdoutContainer,
 		StderrContainer: stderrContainer,

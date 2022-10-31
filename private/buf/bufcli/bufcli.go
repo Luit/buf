@@ -577,7 +577,7 @@ func newModuleReaderAndCreateCacheDirs(
 // NewConfig creates a new Config.
 func NewConfig(container appflag.Container) (*bufapp.Config, error) {
 	externalConfig := bufapp.ExternalConfig{}
-	if err := appname.ReadConfig(container, &externalConfig); err != nil {
+	if err := appname.ReadConfig(container, container.FS(), &externalConfig); err != nil {
 		return nil, err
 	}
 	return bufapp.NewConfig(container, externalConfig)

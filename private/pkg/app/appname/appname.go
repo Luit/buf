@@ -21,9 +21,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"io/fs"
 	"net"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"github.com/bufbuild/buf/private/pkg/app"
 	"github.com/bufbuild/buf/private/pkg/encoding"
@@ -79,9 +81,9 @@ func NewContainer(envContainer app.EnvContainer, name string) (Container, error)
 //
 // If the file does not exist, this is a no-op.
 // The value should be a pointer to unmarshal into.
-func ReadConfig(container Container, value interface{}) error {
+func ReadConfig(container Container, fsys fs.FS, value interface{}) error {
 	configFilePath := filepath.Join(container.ConfigDirPath(), configFileName)
-	data, err := os.ReadFile(configFilePath)
+	data, err := fs.ReadFile(fsys, strings.TrimLeft(configFilePath, "/"))
 	if !errors.Is(err, os.ErrNotExist) {
 		if err != nil {
 			return fmt.Errorf("could not read %s configuration file at %s: %w", container.AppName(), configFilePath, err)

@@ -63,20 +63,9 @@ func TestBasic(t *testing.T) {
 			},
 		},
 	}
-	container := app.NewContainer(
-		map[string]string{
-			"KEY": "VALUE",
-		},
-		strings.NewReader("world"),
-		nil,
-		nil,
-		"test",
-		"sub",
-		"one",
-		"two",
-		"--foo",
-		"hello",
-	)
+	container := app.NewContainer(map[string]string{
+		"KEY": "VALUE",
+	}, nil, strings.NewReader("world"), nil, nil, "test", "sub", "one", "two", "--foo", "hello")
 	require.NoError(t, Run(context.Background(), container, rootCommand))
 	assert.Equal(t, []string{"one", "two"}, actualArgs)
 	assert.Equal(t, "hello", actualFoo)
@@ -98,6 +87,7 @@ func TestError(t *testing.T) {
 		},
 	}
 	container := app.NewContainer(
+		nil,
 		nil,
 		nil,
 		nil,
@@ -126,6 +116,7 @@ func TestVersionToStdout(t *testing.T) {
 	container := app.NewContainer(
 		nil,
 		nil,
+		nil,
 		buffer,
 		nil,
 		"test",
@@ -143,6 +134,7 @@ func TestVersionToStdout(t *testing.T) {
 	}
 	buffer = bytes.NewBuffer(nil)
 	container = app.NewContainer(
+		nil,
 		nil,
 		nil,
 		buffer,
@@ -172,6 +164,7 @@ func TestHelpToStdout(t *testing.T) {
 	container := app.NewContainer(
 		nil,
 		nil,
+		nil,
 		buffer,
 		nil,
 		"test",
@@ -188,6 +181,7 @@ func TestHelpToStdout(t *testing.T) {
 	}
 	buffer = bytes.NewBuffer(nil)
 	container = app.NewContainer(
+		nil,
 		nil,
 		nil,
 		buffer,
@@ -208,15 +202,7 @@ func TestIncorrectFlagEmptyStdout(t *testing.T) {
 	}
 	stderr := bytes.NewBuffer(nil)
 	stdout := bytes.NewBuffer(nil)
-	container := app.NewContainer(
-		nil,
-		nil,
-		stdout,
-		stderr,
-		"test",
-		"--foo",
-		"1",
-	)
+	container := app.NewContainer(nil, nil, nil, stdout, stderr, "test", "--foo", "1")
 	require.Error(t, Run(context.Background(), container, rootCommand))
 	require.Empty(t, stdout.String())
 	require.NotEmpty(t, stderr.String())

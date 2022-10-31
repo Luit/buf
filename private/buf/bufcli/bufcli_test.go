@@ -105,7 +105,7 @@ func testReadModuleWithWorkspacesDisabled(
 		t.Parallel()
 		ctx := context.Background()
 		logger := zap.NewNop()
-		container := app.NewContainer(nil, nil, nil, nil)
+		container := app.NewContainer(nil, nil, nil, nil, nil)
 		bucketProvider := &mockBucketProvider{
 			files: files,
 		}

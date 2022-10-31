@@ -126,7 +126,7 @@ func testRoundTrip(t *testing.T, appName string, env map[string]string, dirPath 
 	_, err = os.Lstat(filepath.Join(dirPath, configFileName))
 	require.NoError(t, err)
 	outputTestConfig := &testConfig{}
-	err = ReadConfig(container, outputTestConfig)
+	err = ReadConfig(container, os.DirFS("/"), outputTestConfig)
 	require.NoError(t, err)
 	require.Equal(t, inputTestConfig, outputTestConfig)
 }

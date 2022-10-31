@@ -231,12 +231,7 @@ func testRunHandlerFunc(
 	exitCode := app.GetExitCode(
 		appproto.Run(
 			context.Background(),
-			app.NewContainer(
-				nil,
-				stdin,
-				stdout,
-				stderr,
-			),
+			app.NewContainer(nil, nil, stdin, stdout, stderr),
 			handler,
 		),
 	)

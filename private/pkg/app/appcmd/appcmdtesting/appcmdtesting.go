@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"context"
 	"io"
+	"os"
 	"testing"
 
 	"github.com/bufbuild/buf/private/pkg/app"
@@ -134,13 +135,7 @@ func RunCommandExitCode(
 	exitCode := app.GetExitCode(
 		appcmd.Run(
 			context.Background(),
-			app.NewContainer(
-				env,
-				stdin,
-				stdout,
-				stderr,
-				append([]string{"test"}, args...)...,
-			),
+			app.NewContainer(env, os.DirFS("/"), stdin, stdout, stderr, append([]string{"test"}, args...)...),
 			newCommand(use),
 		),
 	)

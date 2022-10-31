@@ -72,7 +72,7 @@ func testRoundTripLocalFile(
 	writer := testNewFetchWriter(logger)
 
 	ctx := context.Background()
-	container := app.NewContainer(nil, nil, nil, nil)
+	container := app.NewContainer(nil, nil, nil, nil, nil)
 
 	tmpDir := t.TempDir()
 	filePath := filepath.Join(tmpDir, filename)

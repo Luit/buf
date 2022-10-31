@@ -20,6 +20,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"io/fs"
 	"os"
 	"sort"
 
@@ -68,6 +69,14 @@ type StdinContainer interface {
 	//
 	// If no value was passed when Stdio was created, this will return io.EOF on any call.
 	Stdin() io.Reader
+}
+
+// FsContainer provides a Filesystem os.Fs.
+type FsContainer interface {
+	// Stdin provides Fs.
+	//
+	// If no value was passed when Fs was created, this will return os.Fs on any call.
+	FS() fs.FS
 }
 
 // NewStdinContainer returns a new StdinContainer.
@@ -143,23 +152,12 @@ type Container interface {
 	StdoutContainer
 	StderrContainer
 	ArgContainer
+	FsContainer
 }
 
 // NewContainer returns a new Container.
-func NewContainer(
-	env map[string]string,
-	stdin io.Reader,
-	stdout io.Writer,
-	stderr io.Writer,
-	args ...string,
-) Container {
-	return newContainer(
-		NewEnvContainer(env),
-		NewStdinContainer(stdin),
-		NewStdoutContainer(stdout),
-		NewStderrContainer(stderr),
-		NewArgContainer(args...),
-	)
+func NewContainer(env map[string]string, fsys fs.FS, stdin io.Reader, stdout io.Writer, stderr io.Writer, args ...string) Container {
+	return newContainer(NewEnvContainer(env), newFsContainer(fsys), NewStdinContainer(stdin), NewStdoutContainer(stdout), NewStderrContainer(stderr), NewArgContainer(args...))
 }
 
 // NewContainerForOS returns a new Container for the operating system.
@@ -168,24 +166,12 @@ func NewContainerForOS() (Container, error) {
 	if err != nil {
 		return nil, err
 	}
-	return newContainer(
-		envContainer,
-		NewStdinContainerForOS(),
-		NewStdoutContainerForOS(),
-		NewStderrContainerForOS(),
-		NewArgContainerForOS(),
-	), nil
+	return newContainer(envContainer, newFsContainer(nil), NewStdinContainerForOS(), NewStdoutContainerForOS(), NewStderrContainerForOS(), NewArgContainerForOS()), nil
 }
 
 // NewContainerForArgs returns a new Container with the replacement args.
 func NewContainerForArgs(container Container, newArgs ...string) Container {
-	return newContainer(
-		container,
-		container,
-		container,
-		container,
-		NewArgContainer(newArgs...),
-	)
+	return newContainer(container, container, container, container, container, NewArgContainer(newArgs...))
 }
 
 // StdioContainer is a stdio container.
