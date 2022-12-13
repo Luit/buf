@@ -1,0 +1,161 @@
+## buf generate
+
+Generate stubs for protoc plugins using a template.
+
+### Synopsis
+
+Generate stubs for protoc plugins using a template.
+
+This command uses a template file of the shape:
+
+# The version of the generation template.
+# Required.
+# The valid values are v1beta1, v1.
+version: v1
+# The plugins to run. "plugin" is required.
+plugins:
+    # The name of the plugin.
+    # By default, buf generate will look for a binary named protoc-gen-NAME on your $PATH.
+    # Alternatively, use a remote plugin:
+    # plugin: buf.build/protocolbuffers/go:v1.28.1
+  - plugin: go
+    # The the relative output directory.
+    # Required.
+    out: gen/go
+    # Any options to provide to the plugin.
+    # This can be either a single string or a list of strings.
+    # Optional.
+    opt: paths=source_relative
+    # The custom path to the plugin binary, if not protoc-gen-NAME on your $PATH.
+    # Optional, and exclusive with "remote".
+    path: custom-gen-go
+    # The generation strategy to use. There are two options:
+    #
+    # 1. "directory"
+    #
+    #   This will result in buf splitting the input files by directory, and making separate plugin
+    #   invocations in parallel. This is roughly the concurrent equivalent of:
+    #
+    #     for dir in $(find . -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq); do
+    #       protoc -I . $(find "${dir}" -name '*.proto')
+    #     done
+    #
+    #   Almost every Protobuf plugin either requires this, or works with this,
+    #   and this is the recommended and default value.
+    #
+    # 2. "all"
+    #
+    #   This will result in buf making a single plugin invocation with all input files.
+    #   This is roughly the equivalent of:
+    #
+    #     protoc -I . $(find . -name '*.proto')
+    #
+    #   This is needed for certain plugins that expect all files to be given at once.
+    #
+    # If omitted, "directory" is used. Most users should not need to set this option.
+    # Optional.
+    strategy: directory
+  - plugin: java
+    out: gen/java
+    # Use the plugin hosted at buf.build/protocolbuffers/python at version v21.9.
+    # If version is omitted, uses the latest version of the plugin.
+  - plugin: buf.build/protocolbuffers/python:v21.9
+    out: gen/python
+
+As an example, here's a typical "buf.gen.yaml" go and grpc, assuming
+"protoc-gen-go" and "protoc-gen-go-grpc" are on your "$PATH":
+
+version: v1
+plugins:
+  - plugin: go
+    out: gen/go
+    opt: paths=source_relative
+  - plugin: go-grpc
+    out: gen/go
+    opt: paths=source_relative,require_unimplemented_servers=false
+
+By default, buf generate will look for a file of this shape named
+"buf.gen.yaml" in your current directory. This can be thought of as a template
+for the set of plugins you want to invoke.
+
+The first argument is the source, module, or image to generate from.
+If no argument is specified, defaults to ".".
+
+Call with:
+
+# uses buf.gen.yaml as template, current directory as input
+$ buf generate
+
+# same as the defaults (template of "buf.gen.yaml", current directory as input)
+$ buf generate --template buf.gen.yaml .
+
+# --template also takes YAML or JSON data as input, so it can be used without a file
+$ buf generate --template '{"version":"v1","plugins":[{"plugin":"go","out":"gen/go"}]}'
+
+# download the repository and generate code stubs per the bar.yaml template
+$ buf generate --template bar.yaml https://github.com/foo/bar.git
+
+# generate to the bar/ directory, prepending bar/ to the out directives in the template
+$ buf generate --template bar.yaml -o bar https://github.com/foo/bar.git
+
+The paths in the template and the -o flag will be interpreted as relative to your
+current directory, so you can place your template files anywhere.
+
+If you only want to generate stubs for a subset of your input, you can do so via the --path flag:
+
+# Only generate for the files in the directories proto/foo and proto/bar
+$ buf generate --path proto/foo --path proto/bar
+
+# Only generate for the files proto/foo/foo.proto and proto/foo/bar.proto
+$ buf generate --path proto/foo/foo.proto --path proto/foo/bar.proto
+
+# Only generate for the files in the directory proto/foo on your GitHub repository
+$ buf generate --template buf.gen.yaml https://github.com/foo/bar.git --path proto/foo
+
+Note that all paths must be contained within the same module. For example, if you have a
+module in "proto", you cannot specify "--path proto", however "--path proto/foo" is allowed
+as "proto/foo" is contained within "proto".
+
+Plugins are invoked in the order they are specified in the template, but each plugin
+has a per-directory parallel invocation, with results from each invocation combined
+before writing the result.
+
+Insertion points are processed in the order the plugins are specified in the template.
+
+```
+buf generate <input> [flags]
+```
+
+### Options
+
+```
+      --config string           The file or data to use for configuration.
+      --disable-symlinks        Do not follow symlinks when reading sources or configuration from the local filesystem.
+                                By default, symlinks are followed in this CLI, but never followed on the Buf Schema Registry.
+      --error-format string     The format for build errors, printed to stderr. Must be one of [text,json,msvs,junit]. (default "text")
+      --exclude-path strings    Exclude specific files or directories, for example "proto/a/a.proto" or "proto/a".
+                                If specified multiple times, the union is taken.
+  -h, --help                    help for generate
+      --include-imports         Also generate all imports except for Well-Known Types.
+      --include-types strings   The types (message, enum, service) that should be included in this image. When specified, the resulting image will only include descriptors to describe the requested types. Flag usage overrides buf.gen.yaml
+      --include-wkt             Also generate Well-Known Types. Cannot be set without --include-imports.
+  -o, --output string           The base directory to generate to. This is prepended to the out directories in the generation template. (default ".")
+      --path strings            Limit to specific files or directories, for example "proto/a/a.proto" or "proto/a".
+                                If specified multiple times, the union is taken.
+      --template string         The generation template file or data to use. Must be in either YAML or JSON format.
+```
+
+### Options inherited from parent commands
+
+```
+      --debug               Turn on debug logging.
+      --log-format string   The log format [text,color,json]. (default "color")
+      --timeout duration    The duration until timing out. (default 2m0s)
+  -v, --verbose             Turn on verbose mode.
+```
+
+### SEE ALSO
+
+* [buf](buf.md)	 - The Buf CLI
+
+###### Auto generated by spf13/cobra on 13-Dec-2022
