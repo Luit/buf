@@ -19,6 +19,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 	"strings"
 
 	"github.com/bufbuild/buf/private/pkg/app"
@@ -89,6 +90,23 @@ func NewInvalidArgumentErrorf(format string, args ...interface{}) error {
 // Main runs the application using the OS container and calling os.Exit on the return value of Run.
 func Main(ctx context.Context, command *Command) {
 	app.Main(ctx, newRunFunc(command))
+}
+
+func Docs(ctx context.Context, command *Command) error {
+	var runErrAddr error
+	container, err := app.NewContainerForOS()
+	if err != nil {
+		return err
+	}
+	cobraCommand, err := commandToCobra(ctx, container, command, &runErrAddr)
+	if err != nil {
+		return err
+	}
+	err = doc.GenMarkdownTree(cobraCommand, "docs")
+	if err != nil {
+		log.Fatal(err)
+	}
+	return nil
 }
 
 // Run runs the application using the container.
