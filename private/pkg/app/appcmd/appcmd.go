@@ -102,10 +102,11 @@ func Docs(ctx context.Context, command *Command) error {
 	if err != nil {
 		return err
 	}
-	err = doc.GenMarkdownTree(cobraCommand, "docs")
+	err = GenMarkdownTree(cobraCommand, "docs")
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	return nil
 }
 
@@ -277,6 +278,7 @@ func commandToCobra(
 		Args:       command.Args,
 		Deprecated: command.Deprecated,
 		Hidden:     command.Hidden,
+		Version:    command.Version,
 		Short:      strings.TrimSpace(command.Short),
 	}
 	cobraCommand.SetHelpFunc(

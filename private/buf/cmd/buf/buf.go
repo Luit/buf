@@ -86,7 +86,7 @@ func Main(name string) {
 	appcmd.Main(context.Background(), NewRootCommand(name))
 }
 
-// Doc generates documentation for the buf command
+// Doc generates documentation for the buf command.
 func Docs(name string) error {
 	return appcmd.Docs(context.Background(), NewRootCommand(name))
 }

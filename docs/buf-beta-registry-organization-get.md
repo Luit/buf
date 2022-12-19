@@ -1,0 +1,27 @@
+## buf beta registry organization get
+
+Get an organization on the BSR by name.
+
+```
+buf beta registry organization get <buf.build/organization> [flags]
+```
+
+### Options
+
+```
+      --format string   The output format to use. Must be one of [text,json] (default "text")
+  -h, --help            help for get
+```
+
+### Options inherited from parent commands
+
+```
+      --debug               Turn on debug logging.
+      --log-format string   The log format [text,color,json]. (default "color")
+      --timeout duration    The duration until timing out. (default 2m0s)
+  -v, --verbose             Turn on verbose mode.
+```
+
+### SEE ALSO
+
+* [buf beta registry organization](buf-beta-registry-organization.md)	 - Manage organizations.
