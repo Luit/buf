@@ -12,17 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+// Generated. DO NOT EDIT.
 
-import (
-	"os"
+package generator
 
-	"github.com/bufbuild/buf/private/buf/cmd/buf"
-	"github.com/bufbuild/buf/private/pkg/app"
-)
-
-func main() {
-	if err := buf.Docs("buf"); err != nil {
-		os.Exit(app.GetExitCode(err))
-	}
-}
+import _ "github.com/bufbuild/buf/private/usage"
