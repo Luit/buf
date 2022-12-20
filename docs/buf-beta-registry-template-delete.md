@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-template-delete
 title: buf beta registry template delete
+sidebar_position: -33
 ---
-## buf beta registry template delete
-
 Delete a template by name.
 
 ```
 buf beta registry template delete <buf.build/owner/templates/template> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --force   Force deletion without confirming. Use with caution.
   -h, --help    help for delete
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

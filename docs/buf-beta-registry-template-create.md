@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-template-create
 title: buf beta registry template create
+sidebar_position: -32
 ---
-## buf beta registry template create
-
 Create a new Buf template.
 
 ```
 buf beta registry template create <buf.build/owner/templates/template> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string       The template file or data to use for configuration. Must be in either YAML or JSON format.
@@ -19,7 +18,7 @@ buf beta registry template create <buf.build/owner/templates/template> [flags]
       --visibility string   The template's visibility setting. Must be one of [public,private].
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-template-list
 title: buf beta registry template list
+sidebar_position: -35
 ---
-## buf beta registry template list
-
 List templates on the specified remote.
 
 ```
 buf beta registry template list <buf.build> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -20,7 +19,7 @@ buf beta registry template list <buf.build> [flags]
       --reverse             Reverse the results.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

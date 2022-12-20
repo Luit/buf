@@ -1,9 +1,8 @@
 ---
 id: buf
 title: buf
+sidebar_position: -68
 ---
-## buf
-
 version 1.11.1-dev
 
 The Buf CLI
@@ -18,7 +17,7 @@ A tool for working with Protocol Buffers and managing resources on the Buf Schem
 buf [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --debug               Turn on debug logging.

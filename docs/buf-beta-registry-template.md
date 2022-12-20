@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-template
 title: buf beta registry template
+sidebar_position: -40
 ---
-## buf beta registry template
-
 Manage Protobuf templates on the Buf Schema Registry.
 
 ```
 buf beta registry template [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for template
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

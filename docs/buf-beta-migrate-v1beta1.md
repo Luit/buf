@@ -1,9 +1,8 @@
 ---
 id: buf-beta-migrate-v1beta1
 title: buf beta migrate v1beta1
+sidebar_position: -2
 ---
-## buf beta migrate-v1beta1
-
 Migrate any v1beta1 configuration files in the directory to the latest version.
 
 ### Synopsis
@@ -16,13 +15,13 @@ Defaults to the current directory if not specified.
 buf beta migrate-v1beta1 <directory> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for migrate-v1beta1
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

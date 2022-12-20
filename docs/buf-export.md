@@ -1,9 +1,8 @@
 ---
 id: buf-export
 title: buf export
+sidebar_position: -51
 ---
-## buf export
-
 Export the files from the input location to an output location.
 
 ### Synopsis
@@ -38,7 +37,7 @@ $ buf export https://&lt;git-server&gt;/&lt;owner&gt;/&lt;repo&gt;.git --output=
 buf export <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string          The file or data to use for configuration.
@@ -53,7 +52,7 @@ buf export <input> [flags]
                                If specified multiple times, the union is taken.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-template-undeprecate
 title: buf beta registry template undeprecate
+sidebar_position: -36
 ---
-## buf beta registry template undeprecate
-
 Undeprecate a template by name.
 
 ```
 buf beta registry template undeprecate <buf.build/owner/templates/template> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for undeprecate
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

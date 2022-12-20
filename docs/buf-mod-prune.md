@@ -1,9 +1,8 @@
 ---
 id: buf-mod-prune
 title: buf mod prune
+sidebar_position: -61
 ---
-## buf mod prune
-
 Prunes unused dependencies from the buf.lock file.
 
 ### Synopsis
@@ -16,13 +15,13 @@ The first argument is the directory of the local module to prune. Defaults to &#
 buf mod prune <directory> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for prune
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

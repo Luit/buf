@@ -1,16 +1,15 @@
 ---
 id: buf-mod-init
 title: buf mod init
+sidebar_position: -57
 ---
-## buf mod init
-
 Initializes and writes a new buf.yaml configuration file.
 
 ```
 buf mod init [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --doc             Write inline documentation in the form of comments in the resulting configuration file.
@@ -18,7 +17,7 @@ buf mod init [flags]
   -o, --output string   The directory to write the configuration file to. (default ".")
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

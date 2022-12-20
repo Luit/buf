@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-commit-list
 title: buf beta registry commit list
+sidebar_position: -4
 ---
-## buf beta registry commit list
-
 List commits.
 
 ```
 buf beta registry commit list <buf.build/owner/repo[:ref]> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -20,7 +19,7 @@ buf beta registry commit list <buf.build/owner/repo[:ref]> [flags]
       --reverse             Reverse the results.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

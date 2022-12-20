@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry
 title: buf beta registry
+sidebar_position: -45
 ---
-## buf beta registry
-
 Manage assets on the Buf Schema Registry.
 
 ```
 buf beta registry [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for registry
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

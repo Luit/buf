@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-webhook-create
 title: buf beta registry webhook create
+sidebar_position: -41
 ---
-## buf beta registry webhook create
-
 Create a repository webhook.
 
 ```
 buf beta registry webhook create [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --callback-url string   The url for the webhook to callback to on a given event.
@@ -21,7 +20,7 @@ buf beta registry webhook create [flags]
       --repository string     The repository name to create a webhook for.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-draft
 title: buf beta registry draft
+sidebar_position: -8
 ---
-## buf beta registry draft
-
 Manage a repository's drafts.
 
 ```
 buf beta registry draft [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for draft
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-repository-undeprecate
 title: buf beta registry repository undeprecate
+sidebar_position: -26
 ---
-## buf beta registry repository undeprecate
-
 Undeprecate a BSR repository.
 
 ```
 buf beta registry repository undeprecate <buf.build/owner/repository> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for undeprecate
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

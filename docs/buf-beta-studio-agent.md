@@ -1,16 +1,15 @@
 ---
 id: buf-beta-studio-agent
 title: buf beta studio agent
+sidebar_position: -46
 ---
-## buf beta studio-agent
-
 Run an HTTP(S) server as the Studio agent.
 
 ```
 buf beta studio-agent [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --bind string                     The address to be exposed to accept HTTP requests. (default "127.0.0.1")
@@ -26,7 +25,7 @@ buf beta studio-agent [flags]
       --server-key string               The key to be used in the server TLS configuration.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,22 +1,21 @@
 ---
 id: buf-mod-clear-cache
 title: buf mod clear cache
+sidebar_position: -56
 ---
-## buf mod clear-cache
-
 Clears the Buf module cache.
 
 ```
 buf mod clear-cache [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for clear-cache
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

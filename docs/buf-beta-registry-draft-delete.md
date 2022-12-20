@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-draft-delete
 title: buf beta registry draft delete
+sidebar_position: -6
 ---
-## buf beta registry draft delete
-
 Delete a draft of a BSR repository by name.
 
 ```
 buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --force   Force deletion without confirming. Use with caution.
   -h, --help    help for delete
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-organization-get
 title: buf beta registry organization get
+sidebar_position: -11
 ---
-## buf beta registry organization get
-
 Get an organization on the BSR by name.
 
 ```
 buf beta registry organization get <buf.build/organization> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string   The output format to use. Must be one of [text,json] (default "text")
   -h, --help            help for get
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

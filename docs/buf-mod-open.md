@@ -1,9 +1,8 @@
 ---
 id: buf-mod-open
 title: buf mod open
+sidebar_position: -60
 ---
-## buf mod open
-
 Open the module's homepage in a web browser.
 
 ### Synopsis
@@ -16,13 +15,13 @@ The first argument is the directory of the local module to open. If no argument 
 buf mod open <directory> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for open
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,9 +1,8 @@
 ---
 id: buf-beta-convert
 title: buf beta convert
+sidebar_position: -1
 ---
-## buf beta convert
-
 Convert a message from binary to JSON or vice versa
 
 ### Synopsis
@@ -47,7 +46,7 @@ buf convert buf.build/&lt;org&gt;/&lt;repo&gt; --type buf.Foo --from=payload.jso
 buf beta convert <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --error-format string   The format for build errors printed to stderr. Must be one of [text,json,msvs,junit]. (default "text")
@@ -57,7 +56,7 @@ buf beta convert <input> [flags]
       --type string           The full type name of the message within the input (e.g. acme.weather.v1.Units)
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,9 +1,8 @@
 ---
 id: buf-push
 title: buf push
+sidebar_position: -64
 ---
-## buf push
-
 Push a module to a registry.
 
 ### Synopsis
@@ -18,7 +17,7 @@ If no argument is specified, defaults to &#34;.&#34;.
 buf push <source> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --disable-symlinks      Do not follow symlinks when reading sources or configuration from the local filesystem.
@@ -29,7 +28,7 @@ buf push <source> [flags]
   -t, --tag strings           Create a tag for the pushed commit. Multiple tags are created if specified multiple times. Cannot be used together with --draft.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

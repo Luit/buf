@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-plugin-delete
 title: buf beta registry plugin delete
+sidebar_position: -14
 ---
-## buf beta registry plugin delete
-
 Delete a Protobuf plugin by name.
 
 ```
 buf beta registry plugin delete <buf.build/owner/plugins/plugin> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --force   Force deletion without confirming. Use with caution.
   -h, --help    help for delete
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

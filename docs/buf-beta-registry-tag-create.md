@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-tag-create
 title: buf beta registry tag create
+sidebar_position: -29
 ---
-## buf beta registry tag create
-
 Create a tag for the specified commit.
 
 ```
 buf beta registry tag create <buf.build/owner/repository:commit> <tag> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string   The output format to use. Must be one of [text,json]. (default "text")
   -h, --help            help for create
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

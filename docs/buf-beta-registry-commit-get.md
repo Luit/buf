@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-commit-get
 title: buf beta registry commit get
+sidebar_position: -3
 ---
-## buf beta registry commit get
-
 Get details about a commit.
 
 ```
 buf beta registry commit get <buf.build/owner/repo:ref> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string   The output format to use. Must be one of [text,json] (default "text")
   -h, --help            help for get
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

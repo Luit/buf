@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-plugin-version
 title: buf beta registry plugin version
+sidebar_position: -19
 ---
-## buf beta registry plugin version
-
 Manage Protobuf plugin versions.
 
 ```
 buf beta registry plugin version [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for version
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

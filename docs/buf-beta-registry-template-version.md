@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-template-version
 title: buf beta registry template version
+sidebar_position: -39
 ---
-## buf beta registry template version
-
 Manage Protobuf template versions.
 
 ```
 buf beta registry template version [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for version
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

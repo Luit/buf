@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-tag-list
 title: buf beta registry tag list
+sidebar_position: -30
 ---
-## buf beta registry tag list
-
 List tags for the specified repository.
 
 ```
 buf beta registry tag list <buf.build/owner/repository> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -20,7 +19,7 @@ buf beta registry tag list <buf.build/owner/repository> [flags]
       --reverse             Reverse the results.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-organization-delete
 title: buf beta registry organization delete
+sidebar_position: -10
 ---
-## buf beta registry organization delete
-
 Delete an organization by name on the BSR.
 
 ```
 buf beta registry organization delete <buf.build/organization> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --force   Force deletion without confirming. Use with caution.
   -h, --help    help for delete
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

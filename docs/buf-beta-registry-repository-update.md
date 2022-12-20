@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-repository-update
 title: buf beta registry repository update
+sidebar_position: -27
 ---
-## buf beta registry repository update
-
 Update a BSR repository settings.
 
 ```
 buf beta registry repository update <buf.build/owner/repository> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help                help for update
       --visibility string   The repository's visibility setting. Must be one of [public,private].
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

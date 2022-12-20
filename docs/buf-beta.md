@@ -1,22 +1,21 @@
 ---
 id: buf-beta
 title: buf beta
+sidebar_position: -47
 ---
-## buf beta
-
 Beta commands. Unstable and likely to change.
 
 ```
 buf beta [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for beta
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

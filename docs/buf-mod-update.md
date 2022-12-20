@@ -1,9 +1,8 @@
 ---
 id: buf-mod-update
 title: buf mod update
+sidebar_position: -62
 ---
-## buf mod update
-
 Update a module's dependencies by updating the buf.lock file.
 
 ### Synopsis
@@ -16,14 +15,14 @@ Fetch the latest digests for the specified references in the config file, and wr
 buf mod update <directory> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help           help for update
       --only strings   The name of the dependency to update. When set, only this dependency is updated (along with any of its sub-dependencies). May be passed multiple times.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

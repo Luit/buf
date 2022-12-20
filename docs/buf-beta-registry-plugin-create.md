@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-plugin-create
 title: buf beta registry plugin create
+sidebar_position: -13
 ---
-## buf beta registry plugin create
-
 Create a new Protobuf plugin.
 
 ```
 buf beta registry plugin create <buf.build/owner/plugins/plugin> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -18,7 +17,7 @@ buf beta registry plugin create <buf.build/owner/plugins/plugin> [flags]
       --visibility string   The plugin's visibility setting. Must be one of [public,private].
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

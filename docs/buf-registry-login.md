@@ -1,9 +1,8 @@
 ---
 id: buf-registry-login
 title: buf registry login
+sidebar_position: -65
 ---
-## buf registry login
-
 Log in to the Buf Schema Registry.
 
 ### Synopsis
@@ -17,7 +16,7 @@ The &lt;domain&gt; argument will default to buf.build if not specified.
 buf registry login <domain> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help              help for login
@@ -25,7 +24,7 @@ buf registry login <domain> [flags]
       --username string   The username to use. This command prompts for a username by default.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

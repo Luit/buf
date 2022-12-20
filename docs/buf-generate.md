@@ -1,9 +1,8 @@
 ---
 id: buf-generate
 title: buf generate
+sidebar_position: -53
 ---
-## buf generate
-
 Generate stubs for protoc plugins using a template.
 
 ### Synopsis
@@ -130,7 +129,7 @@ Insertion points are processed in the order the plugins are specified in the tem
 buf generate <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string           The file or data to use for configuration.
@@ -149,7 +148,7 @@ buf generate <input> [flags]
       --template string         The generation template file or data to use. Must be in either YAML or JSON format.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

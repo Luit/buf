@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-commit
 title: buf beta registry commit
+sidebar_position: -5
 ---
-## buf beta registry commit
-
 Manage a repository's commits.
 
 ```
 buf beta registry commit [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for commit
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

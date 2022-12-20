@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-organization
 title: buf beta registry organization
+sidebar_position: -12
 ---
-## buf beta registry organization
-
 Manage organizations.
 
 ```
 buf beta registry organization [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for organization
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

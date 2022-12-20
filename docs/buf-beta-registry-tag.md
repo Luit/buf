@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-tag
 title: buf beta registry tag
+sidebar_position: -31
 ---
-## buf beta registry tag
-
 Manage a repository's tags.
 
 ```
 buf beta registry tag [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for tag
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

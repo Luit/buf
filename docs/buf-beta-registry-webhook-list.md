@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-webhook-list
 title: buf beta registry webhook list
+sidebar_position: -43
 ---
-## buf beta registry webhook list
-
 List repository webhooks.
 
 ```
 buf beta registry webhook list [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help                help for list
@@ -19,7 +18,7 @@ buf beta registry webhook list [flags]
       --repository string   The repository name to list webhooks for.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

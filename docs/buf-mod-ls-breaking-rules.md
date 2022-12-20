@@ -1,16 +1,15 @@
 ---
 id: buf-mod-ls-breaking-rules
 title: buf mod ls breaking rules
+sidebar_position: -58
 ---
-## buf mod ls-breaking-rules
-
 List breaking rules.
 
 ```
 buf mod ls-breaking-rules [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --all              List all rules and not just those currently configured.
@@ -20,7 +19,7 @@ buf mod ls-breaking-rules [flags]
       --version string   List all the rules for the given configuration version. Implies --all. Must be one of [v1beta1,v1].
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

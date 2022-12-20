@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-template-version-create
 title: buf beta registry template version create
+sidebar_position: -37
 ---
-## buf beta registry template version create
-
 Create a new template version.
 
 ```
 buf beta registry template version create <buf.build/owner/templates/template> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string   The template file or data to use for configuration. Must be in either YAML or JSON format.
@@ -19,7 +18,7 @@ buf beta registry template version create <buf.build/owner/templates/template> [
       --name string     The name of the new template version
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,9 +1,8 @@
 ---
 id: buf-ls-files
 title: buf ls files
+sidebar_position: -55
 ---
-## buf ls-files
-
 List all Protobuf files for the input.
 
 ### Synopsis
@@ -18,7 +17,7 @@ If no argument is specified, defaults to &#34;.&#34;.
 buf ls-files <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --as-import-paths       Strip local directory paths and print filepaths as they are imported.
@@ -30,7 +29,7 @@ buf ls-files <input> [flags]
       --include-imports       Include imports.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

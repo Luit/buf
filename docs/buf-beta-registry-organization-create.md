@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-organization-create
 title: buf beta registry organization create
+sidebar_position: -9
 ---
-## buf beta registry organization create
-
 Create a new organization on the BSR.
 
 ```
 buf beta registry organization create <buf.build/organization> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string   The output format to use. Must be one of [text,json] (default "text")
   -h, --help            help for create
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

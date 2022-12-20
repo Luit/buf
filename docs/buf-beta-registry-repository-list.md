@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-repository-list
 title: buf beta registry repository list
+sidebar_position: -25
 ---
-## buf beta registry repository list
-
 List BSR repositories.
 
 ```
 buf beta registry repository list <buf.build> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -20,7 +19,7 @@ buf beta registry repository list <buf.build> [flags]
       --reverse             Reverse the results.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

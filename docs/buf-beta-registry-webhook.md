@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-webhook
 title: buf beta registry webhook
+sidebar_position: -44
 ---
-## buf beta registry webhook
-
 Manage webhooks for a repository on the Buf Schema Registry.
 
 ```
 buf beta registry webhook [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for webhook
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

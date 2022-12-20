@@ -1,22 +1,21 @@
 ---
-id: buf-mo
-title: buf mo
+id: buf-mod
+title: buf mod
+sidebar_position: -63
 ---
-## buf mod
-
 Manage Buf modules.
 
 ```
 buf mod [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for mod
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

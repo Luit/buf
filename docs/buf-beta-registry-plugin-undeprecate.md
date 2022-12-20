@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-plugin-undeprecate
 title: buf beta registry plugin undeprecate
+sidebar_position: -17
 ---
-## buf beta registry plugin undeprecate
-
 Undeprecate a plugin by name.
 
 ```
 buf beta registry plugin undeprecate <buf.build/owner/plugins/plugin> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for undeprecate
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

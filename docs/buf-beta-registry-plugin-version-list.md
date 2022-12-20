@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-plugin-version-list
 title: buf beta registry plugin version list
+sidebar_position: -18
 ---
-## buf beta registry plugin version list
-
 List versions for the specified plugin.
 
 ```
 buf beta registry plugin version list <buf.build/owner/plugins/plugin> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json] (default "text")
@@ -20,7 +19,7 @@ buf beta registry plugin version list <buf.build/owner/plugins/plugin> [flags]
       --reverse             Reverse the results.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

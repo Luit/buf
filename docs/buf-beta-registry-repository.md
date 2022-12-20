@@ -1,22 +1,21 @@
 ---
 id: buf-beta-registry-repository
 title: buf beta registry repository
+sidebar_position: -28
 ---
-## buf beta registry repository
-
 Manage repositories.
 
 ```
 buf beta registry repository [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help   help for repository
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

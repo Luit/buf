@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-repository-create
 title: buf beta registry repository create
+sidebar_position: -21
 ---
-## buf beta registry repository create
-
 Create a new repository on the BSR.
 
 ```
 buf beta registry repository create <buf.build/owner/repository> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --format string       The output format to use. Must be one of [text,json]. (default "text")
@@ -18,7 +17,7 @@ buf beta registry repository create <buf.build/owner/repository> [flags]
       --visibility string   The repository's visibility setting. Must be one of [public,private].
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

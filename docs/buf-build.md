@@ -1,9 +1,8 @@
 ---
-id: buf-buil
-title: buf buil
+id: buf-build
+title: buf build
+sidebar_position: -49
 ---
-## buf build
-
 Build all Protobuf files from the specified input and output a Buf image.
 
 ### Synopsis
@@ -18,7 +17,7 @@ If no argument is specified, defaults to &#34;.&#34;.
 buf build <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --as-file-descriptor-set   Output as a google.protobuf.FileDescriptorSet instead of an image.
@@ -39,7 +38,7 @@ buf build <input> [flags]
       --type strings             The types (message, enum, service) that should be included in this image. When specified, the resulting image will only include descriptors to describe the requested types.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

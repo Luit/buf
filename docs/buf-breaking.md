@@ -1,9 +1,8 @@
 ---
 id: buf-breaking
 title: buf breaking
+sidebar_position: -48
 ---
-## buf breaking
-
 Verify that the input location has no breaking changes compared to the against location.
 
 ### Synopsis
@@ -18,7 +17,7 @@ If no argument is specified, defaults to &#34;.&#34;.
 buf breaking <input> --against <against-input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --against string          Required. The source, module, or image to check against. Must be one of format [bin,dir,git,json,mod,protofile,tar,zip].
@@ -38,7 +37,7 @@ buf breaking <input> --against <against-input> [flags]
                                 If specified multiple times, the union is taken.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-repository-delete
 title: buf beta registry repository delete
+sidebar_position: -22
 ---
-## buf beta registry repository delete
-
 Delete a BSR repository by name.
 
 ```
 buf beta registry repository delete <buf.build/owner/repository> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --force   Force deletion without confirming. Use with caution.
   -h, --help    help for delete
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

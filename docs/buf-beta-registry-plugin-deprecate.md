@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-plugin-deprecate
 title: buf beta registry plugin deprecate
+sidebar_position: -15
 ---
-## buf beta registry plugin deprecate
-
 Deprecate a plugin by name.
 
 ```
 buf beta registry plugin deprecate <buf.build/owner/plugins/plugin> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help             help for deprecate
       --message string   The message to display with deprecation warnings.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

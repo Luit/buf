@@ -1,23 +1,22 @@
 ---
 id: buf-beta-registry-template-deprecate
 title: buf beta registry template deprecate
+sidebar_position: -34
 ---
-## buf beta registry template deprecate
-
 Deprecate a template by name.
 
 ```
 buf beta registry template deprecate <buf.build/owner/templates/template> [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help             help for deprecate
       --message string   The message to display with deprecation warnings.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

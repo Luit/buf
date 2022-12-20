@@ -1,9 +1,8 @@
 ---
 id: buf-lint
 title: buf lint
+sidebar_position: -54
 ---
-## buf lint
-
 Verify that the input location passes lint checks.
 
 ### Synopsis
@@ -18,7 +17,7 @@ If no argument is specified, defaults to &#34;.&#34;.
 buf lint <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string          The file or data to use for configuration.
@@ -32,7 +31,7 @@ buf lint <input> [flags]
                                If specified multiple times, the union is taken.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

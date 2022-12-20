@@ -1,16 +1,15 @@
 ---
 id: buf-beta-registry-webhook-delete
 title: buf beta registry webhook delete
+sidebar_position: -42
 ---
-## buf beta registry webhook delete
-
 Delete a repository webhook.
 
 ```
 buf beta registry webhook delete [flags]
 ```
 
-### Options
+### Flags
 
 ```
   -h, --help            help for delete
@@ -18,7 +17,7 @@ buf beta registry webhook delete [flags]
       --remote string   The remote of the repository the webhook ID belongs to.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.

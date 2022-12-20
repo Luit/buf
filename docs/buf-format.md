@@ -1,9 +1,8 @@
 ---
 id: buf-format
 title: buf format
+sidebar_position: -52
 ---
-## buf format
-
 Format all Protobuf files from the specified input and output the result.
 
 ### Synopsis
@@ -98,7 +97,7 @@ The -w and -o flags cannot be used together in a single invocation.
 buf format <input> [flags]
 ```
 
-### Options
+### Flags
 
 ```
       --config string          The file or data to use for configuration.
@@ -116,7 +115,7 @@ buf format <input> [flags]
   -w, --write                  Rewrite files in-place.
 ```
 
-### Options inherited from parent commands
+### Flags inherited from parent commands
 
 ```
       --debug               Turn on debug logging.
