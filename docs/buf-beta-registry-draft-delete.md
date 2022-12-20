@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-draft-delete
+title: buf beta registry draft delete
+---
 ## buf beta registry draft delete
 
 Delete a draft of a BSR repository by name.
@@ -22,6 +26,6 @@ buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry draft](buf-beta-registry-draft.md)	 - Manage a repository's drafts.

@@ -1,3 +1,7 @@
+---
+id: buf-push
+title: buf push
+---
 ## buf push
 
 Push a module to a registry.
@@ -34,6 +38,6 @@ buf push <source> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

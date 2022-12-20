@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-delete
+title: buf beta registry template delete
+---
 ## buf beta registry template delete
 
 Delete a template by name.
@@ -22,6 +26,6 @@ buf beta registry template delete <buf.build/owner/templates/template> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template](buf-beta-registry-template.md)	 - Manage Protobuf templates on the Buf Schema Registry.

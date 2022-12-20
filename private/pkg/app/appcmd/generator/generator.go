@@ -1,4 +1,4 @@
-package appcmd
+package generator
 
 import (
 	"bytes"
@@ -7,6 +7,7 @@ import (
 	"html"
 	"io"
 	"os"
+	"path"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -16,7 +17,7 @@ func printOptions(buf *bytes.Buffer, cmd *cobra.Command, name string) error {
 	flags := cmd.NonInheritedFlags()
 	flags.SetOutput(buf)
 	if flags.HasAvailableFlags() {
-		buf.WriteString("### Options\n\n```\n")
+		buf.WriteString("### Flags\n\n```\n")
 		flags.PrintDefaults()
 		buf.WriteString("```\n\n")
 	}
@@ -24,16 +25,11 @@ func printOptions(buf *bytes.Buffer, cmd *cobra.Command, name string) error {
 	parentFlags := cmd.InheritedFlags()
 	parentFlags.SetOutput(buf)
 	if parentFlags.HasAvailableFlags() {
-		buf.WriteString("### Options inherited from parent commands\n\n```\n")
+		buf.WriteString("### Flags inherited from parent commands\n\n```\n")
 		parentFlags.PrintDefaults()
 		buf.WriteString("```\n\n")
 	}
 	return nil
-}
-
-// GenMarkdown creates markdown output.
-func GenMarkdown(cmd *cobra.Command, w io.Writer) error {
-	return GenMarkdownCustom(cmd, w, func(s string) string { return s })
 }
 
 // GenMarkdownCustom creates custom markdown output.
@@ -44,7 +40,6 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 	buf := new(bytes.Buffer)
 	name := cmd.CommandPath()
 
-	buf.WriteString("## " + name + "\n\n")
 	if cmd.Version != "" {
 		buf.WriteString("version " + cmd.Version + "\n\n")
 	}
@@ -82,8 +77,8 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 		buf.WriteString("\n")
 	}
 
-	if hasSeeAlso(cmd) {
-		buf.WriteString("### SEE ALSO\n\n")
+	if cmd.HasParent() {
+		buf.WriteString("### Parent Command\n\n")
 		if cmd.HasParent() {
 			parent := cmd.Parent()
 			pname := parent.CommandPath()
@@ -109,7 +104,17 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 // help output will be in the file `cmd-sub-third.1`.
 func GenMarkdownTree(cmd *cobra.Command, dir string) error {
 	identity := func(s string) string { return s }
-	emptyStr := func(s string) string { return "" }
+	var count int
+	emptyStr := func(s string) string {
+		count--
+		s = strings.TrimSuffix(path.Base(s), ".md")
+		return fmt.Sprintf(`---
+id: %s
+title: %s
+sidebar_position: %d
+---
+`, s, strings.ReplaceAll(s, "-", " "), count)
+	}
 	return GenMarkdownTreeCustom(cmd, dir, emptyStr, identity)
 }
 
@@ -140,10 +145,6 @@ func GenMarkdownTreeCustom(cmd *cobra.Command, dir string, filePrepender, linkHa
 		return err
 	}
 	return nil
-}
-
-func hasSeeAlso(cmd *cobra.Command) bool {
-	return cmd.HasParent()
 }
 
 func hasSubCommands(cmd *cobra.Command) bool {

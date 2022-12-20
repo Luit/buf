@@ -1,3 +1,7 @@
+---
+id: buf-registry-login
+title: buf registry login
+---
 ## buf registry login
 
 Log in to the Buf Schema Registry.
@@ -30,6 +34,6 @@ buf registry login <domain> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf registry](buf-registry.md)	 - Manage assets on the Buf Schema Registry.

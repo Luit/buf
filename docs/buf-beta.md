@@ -1,3 +1,7 @@
+---
+id: buf-beta
+title: buf beta
+---
 ## buf beta
 
 Beta commands. Unstable and likely to change.
@@ -28,6 +32,6 @@ buf beta [flags]
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.
 * [buf beta studio-agent](buf-beta-studio-agent.md)	 - Run an HTTP(S) server as the Studio agent.
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

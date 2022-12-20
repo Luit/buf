@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-version-create
+title: buf beta registry template version create
+---
 ## buf beta registry template version create
 
 Create a new template version.
@@ -24,6 +28,6 @@ buf beta registry template version create <buf.build/owner/templates/template> [
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template version](buf-beta-registry-template-version.md)	 - Manage Protobuf template versions.

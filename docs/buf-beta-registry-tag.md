@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-tag
+title: buf beta registry tag
+---
 ## buf beta registry tag
 
 Manage a repository's tags.
@@ -26,6 +30,6 @@ buf beta registry tag [flags]
 * [buf beta registry tag create](buf-beta-registry-tag-create.md)	 - Create a tag for the specified commit.
 * [buf beta registry tag list](buf-beta-registry-tag-list.md)	 - List tags for the specified repository.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

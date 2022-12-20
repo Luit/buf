@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-commit-get
+title: buf beta registry commit get
+---
 ## buf beta registry commit get
 
 Get details about a commit.
@@ -22,6 +26,6 @@ buf beta registry commit get <buf.build/owner/repo:ref> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry commit](buf-beta-registry-commit.md)	 - Manage a repository's commits.

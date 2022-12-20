@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin-version-list
+title: buf beta registry plugin version list
+---
 ## buf beta registry plugin version list
 
 List versions for the specified plugin.
@@ -25,6 +29,6 @@ buf beta registry plugin version list <buf.build/owner/plugins/plugin> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry plugin version](buf-beta-registry-plugin-version.md)	 - Manage Protobuf plugin versions.

@@ -1,3 +1,7 @@
+---
+id: buf-lint
+title: buf lint
+---
 ## buf lint
 
 Verify that the input location passes lint checks.
@@ -37,6 +41,6 @@ buf lint <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

@@ -1,3 +1,7 @@
+---
+id: buf-ls-files
+title: buf ls files
+---
 ## buf ls-files
 
 List all Protobuf files for the input.
@@ -35,6 +39,6 @@ buf ls-files <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

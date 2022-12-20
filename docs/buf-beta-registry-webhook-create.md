@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-webhook-create
+title: buf beta registry webhook create
+---
 ## buf beta registry webhook create
 
 Create a repository webhook.
@@ -26,6 +30,6 @@ buf beta registry webhook create [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry webhook](buf-beta-registry-webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.

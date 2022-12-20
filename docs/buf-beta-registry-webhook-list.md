@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-webhook-list
+title: buf beta registry webhook list
+---
 ## buf beta registry webhook list
 
 List repository webhooks.
@@ -24,6 +28,6 @@ buf beta registry webhook list [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry webhook](buf-beta-registry-webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.

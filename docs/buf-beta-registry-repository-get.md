@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository-get
+title: buf beta registry repository get
+---
 ## buf beta registry repository get
 
 Get a BSR repository by name.
@@ -22,6 +26,6 @@ buf beta registry repository get <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry repository](buf-beta-registry-repository.md)	 - Manage repositories.

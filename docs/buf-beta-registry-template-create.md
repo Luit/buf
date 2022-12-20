@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-create
+title: buf beta registry template create
+---
 ## buf beta registry template create
 
 Create a new Buf template.
@@ -24,6 +28,6 @@ buf beta registry template create <buf.build/owner/templates/template> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template](buf-beta-registry-template.md)	 - Manage Protobuf templates on the Buf Schema Registry.

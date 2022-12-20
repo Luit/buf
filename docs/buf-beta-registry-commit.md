@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-commit
+title: buf beta registry commit
+---
 ## buf beta registry commit
 
 Manage a repository's commits.
@@ -26,6 +30,6 @@ buf beta registry commit [flags]
 * [buf beta registry commit get](buf-beta-registry-commit-get.md)	 - Get details about a commit.
 * [buf beta registry commit list](buf-beta-registry-commit-list.md)	 - List commits.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

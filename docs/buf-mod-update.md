@@ -1,3 +1,7 @@
+---
+id: buf-mod-update
+title: buf mod update
+---
 ## buf mod update
 
 Update a module's dependencies by updating the buf.lock file.
@@ -28,6 +32,6 @@ buf mod update <directory> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

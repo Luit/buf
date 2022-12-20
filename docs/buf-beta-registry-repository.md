@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository
+title: buf beta registry repository
+---
 ## buf beta registry repository
 
 Manage repositories.
@@ -31,6 +35,6 @@ buf beta registry repository [flags]
 * [buf beta registry repository undeprecate](buf-beta-registry-repository-undeprecate.md)	 - Undeprecate a BSR repository.
 * [buf beta registry repository update](buf-beta-registry-repository-update.md)	 - Update a BSR repository settings.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

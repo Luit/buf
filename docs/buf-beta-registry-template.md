@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template
+title: buf beta registry template
+---
 ## buf beta registry template
 
 Manage Protobuf templates on the Buf Schema Registry.
@@ -30,6 +34,6 @@ buf beta registry template [flags]
 * [buf beta registry template undeprecate](buf-beta-registry-template-undeprecate.md)	 - Undeprecate a template by name.
 * [buf beta registry template version](buf-beta-registry-template-version.md)	 - Manage Protobuf template versions.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

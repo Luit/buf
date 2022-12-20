@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin-create
+title: buf beta registry plugin create
+---
 ## buf beta registry plugin create
 
 Create a new Protobuf plugin.
@@ -23,6 +27,6 @@ buf beta registry plugin create <buf.build/owner/plugins/plugin> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry plugin](buf-beta-registry-plugin.md)	 - Manage Protobuf plugins.

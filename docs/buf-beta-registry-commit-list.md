@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-commit-list
+title: buf beta registry commit list
+---
 ## buf beta registry commit list
 
 List commits.
@@ -25,6 +29,6 @@ buf beta registry commit list <buf.build/owner/repo[:ref]> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry commit](buf-beta-registry-commit.md)	 - Manage a repository's commits.

@@ -1,3 +1,7 @@
+---
+id: buf-beta-studio-agent
+title: buf beta studio agent
+---
 ## buf beta studio-agent
 
 Run an HTTP(S) server as the Studio agent.
@@ -31,6 +35,6 @@ buf beta studio-agent [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta](buf-beta.md)	 - Beta commands. Unstable and likely to change.

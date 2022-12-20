@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-organization-get
+title: buf beta registry organization get
+---
 ## buf beta registry organization get
 
 Get an organization on the BSR by name.
@@ -22,6 +26,6 @@ buf beta registry organization get <buf.build/organization> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry organization](buf-beta-registry-organization.md)	 - Manage organizations.

@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin-deprecate
+title: buf beta registry plugin deprecate
+---
 ## buf beta registry plugin deprecate
 
 Deprecate a plugin by name.
@@ -22,6 +26,6 @@ buf beta registry plugin deprecate <buf.build/owner/plugins/plugin> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry plugin](buf-beta-registry-plugin.md)	 - Manage Protobuf plugins.

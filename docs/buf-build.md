@@ -1,3 +1,7 @@
+---
+id: buf-buil
+title: buf buil
+---
 ## buf build
 
 Build all Protobuf files from the specified input and output a Buf image.
@@ -44,6 +48,6 @@ buf build <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

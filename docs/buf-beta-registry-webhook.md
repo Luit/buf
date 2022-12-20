@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-webhook
+title: buf beta registry webhook
+---
 ## buf beta registry webhook
 
 Manage webhooks for a repository on the Buf Schema Registry.
@@ -27,6 +31,6 @@ buf beta registry webhook [flags]
 * [buf beta registry webhook delete](buf-beta-registry-webhook-delete.md)	 - Delete a repository webhook.
 * [buf beta registry webhook list](buf-beta-registry-webhook-list.md)	 - List repository webhooks.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

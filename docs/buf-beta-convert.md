@@ -1,3 +1,7 @@
+---
+id: buf-beta-convert
+title: buf beta convert
+---
 ## buf beta convert
 
 Convert a message from binary to JSON or vice versa
@@ -62,6 +66,6 @@ buf beta convert <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta](buf-beta.md)	 - Beta commands. Unstable and likely to change.

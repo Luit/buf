@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-tag-list
+title: buf beta registry tag list
+---
 ## buf beta registry tag list
 
 List tags for the specified repository.
@@ -25,6 +29,6 @@ buf beta registry tag list <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry tag](buf-beta-registry-tag.md)	 - Manage a repository's tags.

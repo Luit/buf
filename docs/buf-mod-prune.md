@@ -1,3 +1,7 @@
+---
+id: buf-mod-prune
+title: buf mod prune
+---
 ## buf mod prune
 
 Prunes unused dependencies from the buf.lock file.
@@ -27,6 +31,6 @@ buf mod prune <directory> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-list
+title: buf beta registry template list
+---
 ## buf beta registry template list
 
 List templates on the specified remote.
@@ -25,6 +29,6 @@ buf beta registry template list <buf.build> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template](buf-beta-registry-template.md)	 - Manage Protobuf templates on the Buf Schema Registry.

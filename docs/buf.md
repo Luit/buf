@@ -1,3 +1,7 @@
+---
+id: buf
+title: buf
+---
 ## buf
 
 version 1.11.1-dev

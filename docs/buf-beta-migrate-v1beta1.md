@@ -1,3 +1,7 @@
+---
+id: buf-beta-migrate-v1beta1
+title: buf beta migrate v1beta1
+---
 ## buf beta migrate-v1beta1
 
 Migrate any v1beta1 configuration files in the directory to the latest version.
@@ -27,6 +31,6 @@ buf beta migrate-v1beta1 <directory> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta](buf-beta.md)	 - Beta commands. Unstable and likely to change.

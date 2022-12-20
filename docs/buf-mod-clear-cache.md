@@ -1,3 +1,7 @@
+---
+id: buf-mod-clear-cache
+title: buf mod clear cache
+---
 ## buf mod clear-cache
 
 Clears the Buf module cache.
@@ -21,6 +25,6 @@ buf mod clear-cache [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

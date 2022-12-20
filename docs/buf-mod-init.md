@@ -1,3 +1,7 @@
+---
+id: buf-mod-init
+title: buf mod init
+---
 ## buf mod init
 
 Initializes and writes a new buf.yaml configuration file.
@@ -23,6 +27,6 @@ buf mod init [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

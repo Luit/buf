@@ -1,3 +1,7 @@
+---
+id: buf-registry-logout
+title: buf registry logout
+---
 ## buf registry logout
 
 Log out of the Buf Schema Registry.
@@ -27,6 +31,6 @@ buf registry logout [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf registry](buf-registry.md)	 - Manage assets on the Buf Schema Registry.

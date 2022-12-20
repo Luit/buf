@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-draft-list
+title: buf beta registry draft list
+---
 ## buf beta registry draft list
 
 List drafts for the specified repository.
@@ -25,6 +29,6 @@ buf beta registry draft list <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry draft](buf-beta-registry-draft.md)	 - Manage a repository's drafts.

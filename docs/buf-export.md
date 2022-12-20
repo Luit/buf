@@ -1,3 +1,7 @@
+---
+id: buf-export
+title: buf export
+---
 ## buf export
 
 Export the files from the input location to an output location.
@@ -58,6 +62,6 @@ buf export <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

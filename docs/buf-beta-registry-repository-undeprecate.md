@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository-undeprecate
+title: buf beta registry repository undeprecate
+---
 ## buf beta registry repository undeprecate
 
 Undeprecate a BSR repository.
@@ -21,6 +25,6 @@ buf beta registry repository undeprecate <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry repository](buf-beta-registry-repository.md)	 - Manage repositories.

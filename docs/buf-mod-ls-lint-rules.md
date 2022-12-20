@@ -1,3 +1,7 @@
+---
+id: buf-mod-ls-lint-rules
+title: buf mod ls lint rules
+---
 ## buf mod ls-lint-rules
 
 List lint rules.
@@ -25,6 +29,6 @@ buf mod ls-lint-rules [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

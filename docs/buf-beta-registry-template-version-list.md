@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-version-list
+title: buf beta registry template version list
+---
 ## buf beta registry template version list
 
 List versions for the specified template.
@@ -25,6 +29,6 @@ buf beta registry template version list <buf.build/owner/templates/template> [fl
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template version](buf-beta-registry-template-version.md)	 - Manage Protobuf template versions.

@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin-version
+title: buf beta registry plugin version
+---
 ## buf beta registry plugin version
 
 Manage Protobuf plugin versions.
@@ -25,6 +29,6 @@ buf beta registry plugin version [flags]
 
 * [buf beta registry plugin version list](buf-beta-registry-plugin-version-list.md)	 - List versions for the specified plugin.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry plugin](buf-beta-registry-plugin.md)	 - Manage Protobuf plugins.

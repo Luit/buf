@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository-create
+title: buf beta registry repository create
+---
 ## buf beta registry repository create
 
 Create a new repository on the BSR.
@@ -23,6 +27,6 @@ buf beta registry repository create <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry repository](buf-beta-registry-repository.md)	 - Manage repositories.

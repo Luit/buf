@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-template-version
+title: buf beta registry template version
+---
 ## buf beta registry template version
 
 Manage Protobuf template versions.
@@ -26,6 +30,6 @@ buf beta registry template version [flags]
 * [buf beta registry template version create](buf-beta-registry-template-version-create.md)	 - Create a new template version.
 * [buf beta registry template version list](buf-beta-registry-template-version-list.md)	 - List versions for the specified template.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry template](buf-beta-registry-template.md)	 - Manage Protobuf templates on the Buf Schema Registry.

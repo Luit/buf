@@ -1,3 +1,7 @@
+---
+id: buf-mod-open
+title: buf mod open
+---
 ## buf mod open
 
 Open the module's homepage in a web browser.
@@ -27,6 +31,6 @@ buf mod open <directory> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

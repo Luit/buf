@@ -1,3 +1,7 @@
+---
+id: buf-breaking
+title: buf breaking
+---
 ## buf breaking
 
 Verify that the input location has no breaking changes compared to the against location.
@@ -43,6 +47,6 @@ buf breaking <input> --against <against-input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

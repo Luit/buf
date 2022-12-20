@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-organization-delete
+title: buf beta registry organization delete
+---
 ## buf beta registry organization delete
 
 Delete an organization by name on the BSR.
@@ -22,6 +26,6 @@ buf beta registry organization delete <buf.build/organization> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry organization](buf-beta-registry-organization.md)	 - Manage organizations.

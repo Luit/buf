@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-tag-create
+title: buf beta registry tag create
+---
 ## buf beta registry tag create
 
 Create a tag for the specified commit.
@@ -22,6 +26,6 @@ buf beta registry tag create <buf.build/owner/repository:commit> <tag> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry tag](buf-beta-registry-tag.md)	 - Manage a repository's tags.

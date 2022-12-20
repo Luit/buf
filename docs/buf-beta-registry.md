@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry
+title: buf beta registry
+---
 ## buf beta registry
 
 Manage assets on the Buf Schema Registry.
@@ -32,6 +36,6 @@ buf beta registry [flags]
 * [buf beta registry template](buf-beta-registry-template.md)	 - Manage Protobuf templates on the Buf Schema Registry.
 * [buf beta registry webhook](buf-beta-registry-webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta](buf-beta.md)	 - Beta commands. Unstable and likely to change.

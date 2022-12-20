@@ -1,3 +1,7 @@
+---
+id: buf-generate
+title: buf generate
+---
 ## buf generate
 
 Generate stubs for protoc plugins using a template.
@@ -154,6 +158,6 @@ buf generate <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

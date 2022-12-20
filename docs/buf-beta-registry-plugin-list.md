@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin-list
+title: buf beta registry plugin list
+---
 ## buf beta registry plugin list
 
 List plugins on the specified remote.
@@ -25,6 +29,6 @@ buf beta registry plugin list <buf.build> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry plugin](buf-beta-registry-plugin.md)	 - Manage Protobuf plugins.

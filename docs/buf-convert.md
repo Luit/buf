@@ -1,3 +1,7 @@
+---
+id: buf-convert
+title: buf convert
+---
 ## buf convert
 
 Convert a message from binary to JSON or vice versa
@@ -62,6 +66,6 @@ buf convert <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

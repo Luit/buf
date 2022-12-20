@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-webhook-delete
+title: buf beta registry webhook delete
+---
 ## buf beta registry webhook delete
 
 Delete a repository webhook.
@@ -23,6 +27,6 @@ buf beta registry webhook delete [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry webhook](buf-beta-registry-webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.

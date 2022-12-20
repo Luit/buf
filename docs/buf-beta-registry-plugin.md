@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-plugin
+title: buf beta registry plugin
+---
 ## buf beta registry plugin
 
 Manage Protobuf plugins.
@@ -30,6 +34,6 @@ buf beta registry plugin [flags]
 * [buf beta registry plugin undeprecate](buf-beta-registry-plugin-undeprecate.md)	 - Undeprecate a plugin by name.
 * [buf beta registry plugin version](buf-beta-registry-plugin-version.md)	 - Manage Protobuf plugin versions.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

@@ -1,3 +1,7 @@
+---
+id: buf-registry
+title: buf registry
+---
 ## buf registry
 
 Manage assets on the Buf Schema Registry.
@@ -26,6 +30,6 @@ buf registry [flags]
 * [buf registry login](buf-registry-login.md)	 - Log in to the Buf Schema Registry.
 * [buf registry logout](buf-registry-logout.md)	 - Log out of the Buf Schema Registry.
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

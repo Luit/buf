@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-organization-create
+title: buf beta registry organization create
+---
 ## buf beta registry organization create
 
 Create a new organization on the BSR.
@@ -22,6 +26,6 @@ buf beta registry organization create <buf.build/organization> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry organization](buf-beta-registry-organization.md)	 - Manage organizations.

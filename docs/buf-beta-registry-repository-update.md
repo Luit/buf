@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository-update
+title: buf beta registry repository update
+---
 ## buf beta registry repository update
 
 Update a BSR repository settings.
@@ -22,6 +26,6 @@ buf beta registry repository update <buf.build/owner/repository> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry repository](buf-beta-registry-repository.md)	 - Manage repositories.

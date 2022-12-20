@@ -19,6 +19,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/bufbuild/buf/private/pkg/app/appcmd/generator"
 	"log"
 	"strings"
 
@@ -102,7 +103,7 @@ func Docs(ctx context.Context, command *Command) error {
 	if err != nil {
 		return err
 	}
-	err = GenMarkdownTree(cobraCommand, "docs")
+	err = generator.GenMarkdownTree(cobraCommand, "docs")
 	if err != nil {
 		log.Fatal(err)
 	}

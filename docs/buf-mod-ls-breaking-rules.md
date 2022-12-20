@@ -1,3 +1,7 @@
+---
+id: buf-mod-ls-breaking-rules
+title: buf mod ls breaking rules
+---
 ## buf mod ls-breaking-rules
 
 List breaking rules.
@@ -25,6 +29,6 @@ buf mod ls-breaking-rules [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf mod](buf-mod.md)	 - Manage Buf modules.

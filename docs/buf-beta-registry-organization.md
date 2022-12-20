@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-organization
+title: buf beta registry organization
+---
 ## buf beta registry organization
 
 Manage organizations.
@@ -27,6 +31,6 @@ buf beta registry organization [flags]
 * [buf beta registry organization delete](buf-beta-registry-organization-delete.md)	 - Delete an organization by name on the BSR.
 * [buf beta registry organization get](buf-beta-registry-organization-get.md)	 - Get an organization on the BSR by name.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

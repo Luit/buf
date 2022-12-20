@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-draft
+title: buf beta registry draft
+---
 ## buf beta registry draft
 
 Manage a repository's drafts.
@@ -26,6 +30,6 @@ buf beta registry draft [flags]
 * [buf beta registry draft delete](buf-beta-registry-draft-delete.md)	 - Delete a draft of a BSR repository by name.
 * [buf beta registry draft list](buf-beta-registry-draft-list.md)	 - List drafts for the specified repository.
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry](buf-beta-registry.md)	 - Manage assets on the Buf Schema Registry.

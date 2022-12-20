@@ -1,3 +1,7 @@
+---
+id: buf-beta-registry-repository-list
+title: buf beta registry repository list
+---
 ## buf beta registry repository list
 
 List BSR repositories.
@@ -25,6 +29,6 @@ buf beta registry repository list <buf.build> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf beta registry repository](buf-beta-registry-repository.md)	 - Manage repositories.

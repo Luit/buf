@@ -1,3 +1,7 @@
+---
+id: buf-mo
+title: buf mo
+---
 ## buf mod
 
 Manage Buf modules.
@@ -31,6 +35,6 @@ buf mod [flags]
 * [buf mod prune](buf-mod-prune.md)	 - Prunes unused dependencies from the buf.lock file.
 * [buf mod update](buf-mod-update.md)	 - Update a module's dependencies by updating the buf.lock file.
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI

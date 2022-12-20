@@ -1,3 +1,7 @@
+---
+id: buf-format
+title: buf format
+---
 ## buf format
 
 Format all Protobuf files from the specified input and output the result.
@@ -121,6 +125,6 @@ buf format <input> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
-### SEE ALSO
+### Parent Command
 
 * [buf](buf.md)	 - The Buf CLI
