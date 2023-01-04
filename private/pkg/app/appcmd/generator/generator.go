@@ -48,13 +48,11 @@ func printOptions(buf *bytes.Buffer, cmd *cobra.Command, name string) error {
 }
 
 // GenMarkdownCustom creates custom markdown output.
-func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string) string) error {
+func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, childLinkHandler, parentLinkHandler func(*cobra.Command) string) error {
 	cmd.InitDefaultHelpCmd()
 	cmd.InitDefaultHelpFlag()
-
 	buf := new(bytes.Buffer)
 	name := cmd.CommandPath()
-
 	if cmd.Version != "" {
 		buf.WriteString("version " + cmd.Version + "\n\n")
 	}
@@ -87,7 +85,10 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 			cname := name + " " + child.Name()
 			link := cname + ".md"
 			link = strings.ReplaceAll(link, " ", "-")
-			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", cname, linkHandler(link), child.Short))
+
+			childLink := childLinkHandler(child)
+
+			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", cname, childLink, child.Short))
 		}
 		buf.WriteString("\n")
 	}
@@ -99,7 +100,10 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 			pname := parent.CommandPath()
 			link := pname + ".md"
 			link = strings.ReplaceAll(link, " ", "-")
-			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", pname, linkHandler(link), parent.Short))
+
+			parentLink := parentLinkHandler(parent)
+
+			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", pname, parentLink, parent.Short))
 			cmd.VisitParents(func(c *cobra.Command) {
 				if c.DisableAutoGenTag {
 					cmd.DisableAutoGenTag = c.DisableAutoGenTag
@@ -118,9 +122,14 @@ func GenMarkdownCustom(cmd *cobra.Command, w io.Writer, linkHandler func(string)
 // and `sub` has a subcommand called `third`, it is undefined which
 // help output will be in the file `cmd-sub-third.1`.
 func GenMarkdownTree(cmd *cobra.Command, dir string) error {
-	identity := func(s string) string { return s }
+	childLinkHandler := func(cmd *cobra.Command) string {
+		return cmd.Parent().Name() + "/" + cmd.Name() + ".md"
+	}
+	parentLinkHandler := func(cmd *cobra.Command) string {
+		return "../" + cmd.Name() + ".md"
+	}
 	var count int
-	emptyStr := func(s string) string {
+	frontMatter := func(s string) string {
 		count--
 		s = strings.TrimSuffix(path.Base(s), ".md")
 		return fmt.Sprintf(`---
@@ -130,23 +139,34 @@ sidebar_position: %d
 ---
 `, s, strings.ReplaceAll(s, "-", " "), count)
 	}
-	return GenMarkdownTreeCustom(cmd, dir, emptyStr, identity)
+	pathGenerator := func(cmd *cobra.Command) string {
+		cmdPath := cmd.CommandPath()
+		cmdAll := strings.ReplaceAll(cmdPath, " ", "/")
+		if cmd.HasSubCommands() {
+			return path.Join(cmdAll, "index.md")
+		}
+		return cmdAll + ".md"
+	}
+	return GenMarkdownTreeCustom(cmd, dir, frontMatter, pathGenerator, childLinkHandler, parentLinkHandler)
 }
 
 // GenMarkdownTreeCustom is the the same as GenMarkdownTree, but
 // with custom filePrepender and linkHandler.
-func GenMarkdownTreeCustom(cmd *cobra.Command, dir string, filePrepender, linkHandler func(string) string) error {
+func GenMarkdownTreeCustom(cmd *cobra.Command, dir string, filePrepender func(string) string, pathGenerator, childLinkHandler, parentLinkHandler func(*cobra.Command) string) error {
 	for _, c := range cmd.Commands() {
 		if !c.IsAvailableCommand() || c.IsAdditionalHelpTopicCommand() {
 			continue
 		}
-		if err := GenMarkdownTreeCustom(c, dir, filePrepender, linkHandler); err != nil {
+		if err := GenMarkdownTreeCustom(c, dir, filePrepender, pathGenerator, childLinkHandler, parentLinkHandler); err != nil {
 			return err
 		}
 	}
 
-	basename := strings.ReplaceAll(cmd.CommandPath(), " ", "-") + ".md"
+	basename := pathGenerator(cmd)
 	filename := filepath.Join(dir, basename)
+	if err := os.MkdirAll(path.Dir(filename), os.ModePerm); err != nil {
+		return err
+	}
 	f, err := os.Create(filename)
 	if err != nil {
 		return err
@@ -156,7 +176,7 @@ func GenMarkdownTreeCustom(cmd *cobra.Command, dir string, filePrepender, linkHa
 	if _, err := io.WriteString(f, filePrepender(filename)); err != nil {
 		return err
 	}
-	if err := GenMarkdownCustom(cmd, f, linkHandler); err != nil {
+	if err := GenMarkdownCustom(cmd, f, childLinkHandler, parentLinkHandler); err != nil {
 		return err
 	}
 	return nil
