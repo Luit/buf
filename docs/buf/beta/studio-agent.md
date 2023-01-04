@@ -1,7 +1,7 @@
 ---
 id: studio-agent
 title: studio-agent
-sidebar_position: 3
+sidebar_position: 4
 ---
 Run an HTTP(S) server as the Studio agent.
 

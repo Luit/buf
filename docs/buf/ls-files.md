@@ -1,7 +1,7 @@
 ---
 id: ls-files
 title: ls-files
-sidebar_position: 9
+sidebar_position: 10
 ---
 List all Protobuf files for the input.
 
@@ -11,7 +11,7 @@ List all Protobuf files for the input.
 
 The first argument is the source, module, or image to list from.
 The first argument must be one of format [bin,dir,git,json,mod,protofile,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf ls-files <input> [flags]

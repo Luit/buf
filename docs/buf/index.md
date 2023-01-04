@@ -1,7 +1,7 @@
 ---
 id: index
 title: buf
-sidebar_position: -1
+sidebar_position: 0
 ---
 version 1.11.1-dev
 
@@ -11,7 +11,7 @@ The Buf CLI
 
 The Buf CLI
 
-A tool for working with Protocol Buffers and managing resources on the Buf Schema Registry (BSR).
+A tool for working with Protocol Buffers and managing resources on the Buf Schema Registry (BSR). 
 
 ```
 buf [flags]

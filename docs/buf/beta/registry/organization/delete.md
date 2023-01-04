@@ -1,7 +1,7 @@
 ---
 id: delete
 title: delete
-sidebar_position: 1
+sidebar_position: 2
 ---
 Delete an organization by name on the BSR.
 

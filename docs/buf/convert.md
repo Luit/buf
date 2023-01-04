@@ -1,7 +1,7 @@
 ---
 id: convert
 title: convert
-sidebar_position: 4
+sidebar_position: 5
 ---
 Convert a message from binary to JSON or vice versa
 
@@ -40,7 +40,7 @@ $ buf build -o - | buf convert -#format=bin --type buf.Foo --from=payload.json
 
 # Use a module on the bsr
 
-buf convert buf.build/&lt;org&gt;/&lt;repo&gt; --type buf.Foo --from=payload.json
+buf convert buf.build/&lt;org&gt;/&lt;repo&gt; --type buf.Foo --from=payload.json 
 
 ```
 buf convert <input> [flags]

@@ -1,7 +1,7 @@
 ---
 id: logout
 title: logout
-sidebar_position: 1
+sidebar_position: 2
 ---
 Log out of the Buf Schema Registry.
 
@@ -9,7 +9,7 @@ Log out of the Buf Schema Registry.
 
 Log out of the Buf Schema Registry.
 
-This command removes any BSR credentials from your .netrc file.
+This command removes any BSR credentials from your .netrc file. 
 
 ```
 buf registry logout [flags]

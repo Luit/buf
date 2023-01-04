@@ -1,7 +1,7 @@
 ---
 id: init
 title: init
-sidebar_position: 1
+sidebar_position: 2
 ---
 Initializes and writes a new buf.yaml configuration file.
 

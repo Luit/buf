@@ -1,7 +1,7 @@
 ---
 id: index
 title: beta
-sidebar_position: 1
+sidebar_position: 2
 ---
 Beta commands. Unstable and likely to change.
 

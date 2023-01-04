@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: 0
+sidebar_position: 1
 ---
 List versions for the specified plugin.
 

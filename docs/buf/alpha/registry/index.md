@@ -1,7 +1,7 @@
 ---
 id: index
 title: registry
-sidebar_position: 2
+sidebar_position: 3
 ---
 Manage assets on the Buf Schema Registry.
 

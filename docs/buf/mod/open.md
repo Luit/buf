@@ -1,7 +1,7 @@
 ---
 id: open
 title: open
-sidebar_position: 4
+sidebar_position: 5
 ---
 Open the module's homepage in a web browser.
 
@@ -9,7 +9,7 @@ Open the module's homepage in a web browser.
 
 Open the module&#39;s homepage in a web browser.
 
-The first argument is the directory of the local module to open. If no argument is specified, defaults to &#34;.&#34;
+The first argument is the directory of the local module to open. If no argument is specified, defaults to &#34;.&#34; 
 
 ```
 buf mod open <directory> [flags]

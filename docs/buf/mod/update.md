@@ -1,7 +1,7 @@
 ---
 id: update
 title: update
-sidebar_position: 6
+sidebar_position: 7
 ---
 Update a module's dependencies by updating the buf.lock file.
 
@@ -9,7 +9,7 @@ Update a module's dependencies by updating the buf.lock file.
 
 Update a module&#39;s dependencies by updating the buf.lock file.
 
-Fetch the latest digests for the specified references in the config file, and write them and their transitive dependencies to the buf.lock file. The first argument is the directory of the local module to update. Defaults to &#34;.&#34; if no argument is specified.
+Fetch the latest digests for the specified references in the config file, and write them and their transitive dependencies to the buf.lock file. The first argument is the directory of the local module to update. Defaults to &#34;.&#34; if no argument is specified. 
 
 ```
 buf mod update <directory> [flags]

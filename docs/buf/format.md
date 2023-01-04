@@ -1,7 +1,7 @@
 ---
 id: format
 title: format
-sidebar_position: 6
+sidebar_position: 7
 ---
 Format all Protobuf files from the specified input and output the result.
 
@@ -91,7 +91,7 @@ $ buf format simple -d -w
 diff -u simple/simple.proto.orig simple/simple.proto
 ...
 
-The -w and -o flags cannot be used together in a single invocation.
+The -w and -o flags cannot be used together in a single invocation. 
 
 ```
 buf format <input> [flags]

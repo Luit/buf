@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: 1
+sidebar_position: 2
 ---
 List tags for the specified repository.
 

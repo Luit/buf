@@ -1,7 +1,7 @@
 ---
 id: index
 title: draft
-sidebar_position: 1
+sidebar_position: 2
 ---
 Manage a repository's drafts.
 

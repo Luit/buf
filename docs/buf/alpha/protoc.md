@@ -1,7 +1,7 @@
 ---
 id: protoc
 title: protoc
-sidebar_position: 1
+sidebar_position: 2
 ---
 version 3.21.7-buf
 
@@ -22,7 +22,7 @@ Additional flags:
 
       --(.*)_out:                   Run the named plugin.
       --(.*)_opt:                   Options for the named plugin.
-      @filename:                    Parse arguments from the given filename.
+      @filename:                    Parse arguments from the given filename. 
 
 ```
 buf alpha protoc <proto_file1> <proto_file2> ... [flags]

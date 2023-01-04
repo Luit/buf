@@ -1,7 +1,7 @@
 ---
 id: index
 title: template
-sidebar_position: 6
+sidebar_position: 7
 ---
 Manage Protobuf templates on the Buf Schema Registry.
 

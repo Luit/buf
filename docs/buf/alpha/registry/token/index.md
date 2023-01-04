@@ -1,7 +1,7 @@
 ---
 id: index
 title: token
-sidebar_position: 0
+sidebar_position: 1
 ---
 Manage user tokens.
 

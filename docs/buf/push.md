@@ -1,7 +1,7 @@
 ---
 id: push
 title: push
-sidebar_position: 11
+sidebar_position: 12
 ---
 Push a module to a registry.
 
@@ -11,7 +11,7 @@ Push a module to a registry.
 
 The first argument is the source to push.
 The first argument must be one of format [dir,git,protofile,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf push <source> [flags]

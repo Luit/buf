@@ -1,7 +1,7 @@
 ---
 id: breaking
 title: breaking
-sidebar_position: 2
+sidebar_position: 3
 ---
 Verify that the input location has no breaking changes compared to the against location.
 
@@ -11,7 +11,7 @@ Verify that the input location has no breaking changes compared to the against l
 
 The first argument is the source, module, or image to check for breaking changes.
 The first argument must be one of format [bin,dir,git,json,mod,protofile,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf breaking <input> --against <against-input> [flags]

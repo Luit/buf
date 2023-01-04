@@ -1,7 +1,7 @@
 ---
 id: index
 title: webhook
-sidebar_position: 7
+sidebar_position: 8
 ---
 Manage webhooks for a repository on the Buf Schema Registry.
 

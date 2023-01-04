@@ -1,7 +1,7 @@
 ---
 id: clear-cache
 title: clear-cache
-sidebar_position: 0
+sidebar_position: 1
 ---
 Clears the Buf module cache.
 

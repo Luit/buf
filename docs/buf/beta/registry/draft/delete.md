@@ -1,7 +1,7 @@
 ---
 id: delete
 title: delete
-sidebar_position: 0
+sidebar_position: 1
 ---
 Delete a draft of a BSR repository by name.
 

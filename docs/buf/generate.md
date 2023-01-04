@@ -1,7 +1,7 @@
 ---
 id: generate
 title: generate
-sidebar_position: 7
+sidebar_position: 8
 ---
 Generate stubs for protoc plugins using a template.
 
@@ -123,7 +123,7 @@ Plugins are invoked in the order they are specified in the template, but each pl
 has a per-directory parallel invocation, with results from each invocation combined
 before writing the result.
 
-Insertion points are processed in the order the plugins are specified in the template.
+Insertion points are processed in the order the plugins are specified in the template. 
 
 ```
 buf generate <input> [flags]

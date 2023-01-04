@@ -1,7 +1,7 @@
 ---
 id: ls-breaking-rules
 title: ls-breaking-rules
-sidebar_position: 2
+sidebar_position: 3
 ---
 List breaking rules.
 

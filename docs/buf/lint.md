@@ -1,7 +1,7 @@
 ---
 id: lint
 title: lint
-sidebar_position: 8
+sidebar_position: 9
 ---
 Verify that the input location passes lint checks.
 
@@ -11,7 +11,7 @@ Verify that the input location passes lint checks.
 
 The first argument is the source, module, or Image to lint.
 The first argument must be one of format [bin,dir,git,json,mod,protofile,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf lint <input> [flags]

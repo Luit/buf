@@ -1,7 +1,7 @@
 ---
 id: push
 title: push
-sidebar_position: 0
+sidebar_position: 1
 ---
 Push a plugin to a registry.
 
@@ -11,7 +11,7 @@ Push a plugin to a registry.
 
 The first argument is the source to push (directory containing buf.plugin.yaml or plugin release zip).
 The first argument must be one of format [dir,git,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf alpha plugin push <source> [flags]

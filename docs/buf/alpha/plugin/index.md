@@ -1,7 +1,7 @@
 ---
 id: index
 title: plugin
-sidebar_position: 0
+sidebar_position: 1
 ---
 Manage plugins on the Buf Schema Registry.
 

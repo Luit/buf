@@ -1,7 +1,7 @@
 ---
 id: get
 title: get
-sidebar_position: 0
+sidebar_position: 1
 ---
 Get details about a commit.
 

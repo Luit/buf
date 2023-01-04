@@ -1,7 +1,7 @@
 ---
 id: index
 title: commit
-sidebar_position: 0
+sidebar_position: 1
 ---
 Manage a repository's commits.
 

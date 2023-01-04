@@ -1,7 +1,7 @@
 ---
 id: prune
 title: prune
-sidebar_position: 5
+sidebar_position: 6
 ---
 Prunes unused dependencies from the buf.lock file.
 
@@ -9,7 +9,7 @@ Prunes unused dependencies from the buf.lock file.
 
 Prunes unused dependencies from the buf.lock file.
 
-The first argument is the directory of the local module to prune. Defaults to &#34;.&#34; if no argument is specified.
+The first argument is the directory of the local module to prune. Defaults to &#34;.&#34; if no argument is specified. 
 
 ```
 buf mod prune <directory> [flags]

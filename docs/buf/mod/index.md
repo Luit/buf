@@ -1,7 +1,7 @@
 ---
 id: index
 title: mod
-sidebar_position: 10
+sidebar_position: 11
 ---
 Manage Buf modules.
 

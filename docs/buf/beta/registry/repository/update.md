@@ -1,7 +1,7 @@
 ---
 id: update
 title: update
-sidebar_position: 6
+sidebar_position: 7
 ---
 Update a BSR repository settings.
 

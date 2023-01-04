@@ -1,7 +1,7 @@
 ---
 id: export
 title: export
-sidebar_position: 5
+sidebar_position: 6
 ---
 Export the files from the input location to an output location.
 
@@ -31,7 +31,7 @@ $ buf export buf.build/&lt;owner&gt;/&lt;repo&gt; --output=&lt;output-dir&gt;
 $ buf export buf.build/&lt;owner&gt;/&lt;repo&gt;:&lt;version&gt; --output=&lt;output-dir&gt;
 
 # Export a git repo to a local directory.
-$ buf export https://&lt;git-server&gt;/&lt;owner&gt;/&lt;repo&gt;.git --output=&lt;output-dir&gt;
+$ buf export https://&lt;git-server&gt;/&lt;owner&gt;/&lt;repo&gt;.git --output=&lt;output-dir&gt; 
 
 ```
 buf export <input> [flags]

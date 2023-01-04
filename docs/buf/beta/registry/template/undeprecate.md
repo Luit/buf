@@ -1,7 +1,7 @@
 ---
 id: undeprecate
 title: undeprecate
-sidebar_position: 4
+sidebar_position: 5
 ---
 Undeprecate a template by name.
 

@@ -15,7 +15,6 @@
 package generator
 
 import (
-	"bytes"
 	"fmt"
 	"html"
 	"io"
@@ -27,26 +26,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-func GenMarkdownTree(cmd *cobra.Command, dir string, num int) error {
-	childNum := 0
+func GenMarkdownTree(cmd *cobra.Command, dir string) error {
 	for _, c := range cmd.Commands() {
-		childNum += 1
-		if err := GenMarkdownTree(c, dir, childNum); err != nil {
+		if err := GenMarkdownTree(c, dir); err != nil {
 			return err
 		}
 	}
 	if !cmd.IsAvailableCommand() || cmd.IsAdditionalHelpTopicCommand() {
 		return nil
 	}
-	num--
-	var basename string
-	cmdAll := strings.ReplaceAll(cmd.CommandPath(), " ", "/")
+	cmdPath := strings.ReplaceAll(cmd.CommandPath(), " ", "/")
 	if cmd.HasSubCommands() {
-		basename = path.Join(cmdAll, "index.md")
+		cmdPath = path.Join(cmdPath, "index.md")
 	} else {
-		basename = cmdAll + ".md"
+		cmdPath += ".md"
 	}
-	filename := filepath.Join(dir, basename)
+	filename := filepath.Join(dir, cmdPath)
 	if err := os.MkdirAll(path.Dir(filename), os.ModePerm); err != nil {
 		return err
 	}
@@ -55,15 +50,6 @@ func GenMarkdownTree(cmd *cobra.Command, dir string, num int) error {
 		return err
 	}
 	defer f.Close()
-	frontMatter := fmt.Sprintf(`---
-id: %s
-title: %s
-sidebar_position: %d
----
-`, strings.TrimSuffix(path.Base(filename), ".md"), cmd.Name(), num)
-	if _, err := io.WriteString(f, frontMatter); err != nil {
-		return err
-	}
 	if err := GenMarkdownPage(cmd, f); err != nil {
 		return err
 	}
@@ -72,47 +58,57 @@ sidebar_position: %d
 
 // GenMarkdownPage creates custom markdown output.
 func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
+	var err error
+	p := func(format string, a ...any) {
+		_, err = w.Write([]byte(fmt.Sprintf(format, a...)))
+	}
+	p("---\n")
+	p("id: %s\n", pageId(cmd))
+	p("title: %s\n", cmd.Name())
+	p("sidebar_position: %d\n", order(cmd))
+	p("---\n")
 	cmd.InitDefaultHelpCmd()
 	cmd.InitDefaultHelpFlag()
 	name := cmd.CommandPath()
-	buf := new(bytes.Buffer)
 	// Name + Version
 	if cmd.Version != "" {
-		buf.WriteString("version " + cmd.Version + "\n\n")
+		p("version %s\n\n", cmd.Version)
 	}
-	buf.WriteString(cmd.Short + "\n\n")
+	p(cmd.Short)
+	p("\n\n")
 	// Synopsis
 	if len(cmd.Long) > 0 {
-		buf.WriteString("### Synopsis\n\n")
-		buf.WriteString(html.EscapeString(cmd.Long) + "\n\n")
+		p("### Synopsis\n\n")
+		p("%s \n\n", html.EscapeString(cmd.Long))
 	}
 	if cmd.Runnable() {
-		buf.WriteString(fmt.Sprintf("```\n%s\n```\n\n", cmd.UseLine()))
+		p("```\n%s\n```\n\n", cmd.UseLine())
 	}
 	// Examples
 	if len(cmd.Example) > 0 {
-		buf.WriteString("### Examples\n\n")
-		buf.WriteString(fmt.Sprintf("```\n%s\n```\n\n", html.EscapeString(cmd.Example)))
+		p("### Examples\n\n")
+		p("```\n%s\n```\n\n", html.EscapeString(cmd.Example))
 	}
 	// Flags
 	flags := cmd.NonInheritedFlags()
-	flags.SetOutput(buf)
+	flags.SetOutput(w)
 	if flags.HasAvailableFlags() {
-		buf.WriteString("### Flags\n\n```\n")
+		p("### Flags\n\n")
+		p("```\n")
 		flags.PrintDefaults()
-		buf.WriteString("```\n\n")
+		p("```\n\n")
 	}
 	// Parent Flags
 	parentFlags := cmd.InheritedFlags()
-	parentFlags.SetOutput(buf)
+	parentFlags.SetOutput(w)
 	if parentFlags.HasAvailableFlags() {
-		buf.WriteString("### Flags inherited from parent commands\n\n```\n")
+		p("### Flags inherited from parent commands\n\n```\n")
 		parentFlags.PrintDefaults()
-		buf.WriteString("```\n\n")
+		p("```\n\n")
 	}
 	// Subcommands
 	if hasSubCommands(cmd) {
-		buf.WriteString("### Subcommands\n\n")
+		p("### Subcommands\n\n")
 		children := cmd.Commands()
 		//sort.Slice(children, func(i, j int) bool {
 		//	return children[i].Name() < children[j].Name()
@@ -128,13 +124,13 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 			if child.HasSubCommands() {
 				childLink = child.Name() + "/index.md"
 			}
-			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", commandName, childLink, child.Short))
+			p("* [%s](%s)\t - %s\n", commandName, childLink, child.Short)
 		}
-		buf.WriteString("\n")
+		p("\n")
 	}
 	// Parent Command
 	if cmd.HasParent() {
-		buf.WriteString("### Parent Command\n\n")
+		p("### Parent Command\n\n")
 		if cmd.HasParent() {
 			parent := cmd.Parent()
 			parentName := parent.CommandPath()
@@ -142,7 +138,7 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 			if cmd.HasSubCommands() {
 				link = "../" + link
 			}
-			buf.WriteString(fmt.Sprintf("* [%s](%s)\t - %s\n", parentName, "index.md", parent.Short))
+			p("* [%s](%s)\t - %s\n", parentName, "index.md", parent.Short)
 			cmd.VisitParents(func(c *cobra.Command) {
 				if c.DisableAutoGenTag {
 					cmd.DisableAutoGenTag = c.DisableAutoGenTag
@@ -150,8 +146,31 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 			})
 		}
 	}
-	_, err := buf.WriteTo(w)
 	return err
+}
+
+func order(cmd *cobra.Command) int {
+	var i int
+	if !cmd.HasParent() {
+		return 0
+	}
+	for _, sibling := range cmd.Parent().Commands() {
+		if !cmd.IsAvailableCommand() || cmd.IsAdditionalHelpTopicCommand() {
+			continue
+		}
+		i++
+		if sibling.CommandPath() == cmd.CommandPath() {
+			return i
+		}
+	}
+	return -1
+}
+
+func pageId(cmd *cobra.Command) string {
+	if cmd.HasSubCommands() {
+		return "index"
+	}
+	return cmd.Name()
 }
 
 func hasSubCommands(cmd *cobra.Command) bool {

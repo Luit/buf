@@ -1,7 +1,7 @@
 ---
 id: build
 title: build
-sidebar_position: 3
+sidebar_position: 4
 ---
 Build all Protobuf files from the specified input and output a Buf image.
 
@@ -11,7 +11,7 @@ Build all Protobuf files from the specified input and output a Buf image.
 
 The first argument is the source or module to build or image to convert.
 The first argument must be one of format [bin,dir,git,json,mod,protofile,tar,zip].
-If no argument is specified, defaults to &#34;.&#34;.
+If no argument is specified, defaults to &#34;.&#34;. 
 
 ```
 buf build <input> [flags]

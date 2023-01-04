@@ -1,7 +1,7 @@
 ---
 id: index
 title: organization
-sidebar_position: 2
+sidebar_position: 3
 ---
 Manage organizations.
 

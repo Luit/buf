@@ -1,7 +1,7 @@
 ---
 id: ls-lint-rules
 title: ls-lint-rules
-sidebar_position: 3
+sidebar_position: 4
 ---
 List lint rules.
 

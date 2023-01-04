@@ -1,7 +1,7 @@
 ---
 id: login
 title: login
-sidebar_position: 0
+sidebar_position: 1
 ---
 Log in to the Buf Schema Registry.
 
@@ -10,7 +10,7 @@ Log in to the Buf Schema Registry.
 Log in to the Buf Schema Registry.
 
 This prompts for your BSR username and a BSR token and updates your .netrc file with these credentials.
-The &lt;domain&gt; argument will default to buf.build if not specified.
+The &lt;domain&gt; argument will default to buf.build if not specified. 
 
 ```
 buf registry login <domain> [flags]

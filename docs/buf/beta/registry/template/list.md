@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: 3
+sidebar_position: 4
 ---
 List templates on the specified remote.
 

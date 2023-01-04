@@ -1,7 +1,7 @@
 ---
 id: index
 title: tag
-sidebar_position: 5
+sidebar_position: 6
 ---
 Manage a repository's tags.
 

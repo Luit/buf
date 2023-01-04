@@ -1,7 +1,7 @@
 ---
 id: index
 title: version
-sidebar_position: 5
+sidebar_position: 6
 ---
 Manage Protobuf plugin versions.
 

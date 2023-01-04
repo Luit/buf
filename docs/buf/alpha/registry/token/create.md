@@ -1,7 +1,7 @@
 ---
 id: create
 title: create
-sidebar_position: 0
+sidebar_position: 1
 ---
 Create a new token for a user.
 

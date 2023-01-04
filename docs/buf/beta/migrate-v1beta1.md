@@ -1,7 +1,7 @@
 ---
 id: migrate-v1beta1
 title: migrate-v1beta1
-sidebar_position: 1
+sidebar_position: 2
 ---
 Migrate any v1beta1 configuration files in the directory to the latest version.
 
@@ -9,7 +9,7 @@ Migrate any v1beta1 configuration files in the directory to the latest version.
 
 Migrate any v1beta1 configuration files in the directory to the latest version.
 
-Defaults to the current directory if not specified.
+Defaults to the current directory if not specified. 
 
 ```
 buf beta migrate-v1beta1 <directory> [flags]

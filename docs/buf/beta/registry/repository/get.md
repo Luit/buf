@@ -1,7 +1,7 @@
 ---
 id: get
 title: get
-sidebar_position: 3
+sidebar_position: 4
 ---
 Get a BSR repository by name.
 
