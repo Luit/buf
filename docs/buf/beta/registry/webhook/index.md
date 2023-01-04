@@ -1,7 +1,7 @@
 ---
 id: index
-title: index
-sidebar_position: -44
+title: webhook
+sidebar_position: 7
 ---
 Manage webhooks for a repository on the Buf Schema Registry.
 
@@ -19,17 +19,17 @@ buf beta registry webhook [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Subcommands
 
-* [buf beta registry webhook create](webhook/create.md)	 - Create a repository webhook.
-* [buf beta registry webhook delete](webhook/delete.md)	 - Delete a repository webhook.
-* [buf beta registry webhook list](webhook/list.md)	 - List repository webhooks.
+* [buf beta registry webhook create](create.md)	 - Create a repository webhook.
+* [buf beta registry webhook delete](delete.md)	 - Delete a repository webhook.
+* [buf beta registry webhook list](list.md)	 - List repository webhooks.
 
 ### Parent Command
 
-* [buf beta registry](../registry.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.

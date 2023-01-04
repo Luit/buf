@@ -1,7 +1,7 @@
 ---
 id: index
-title: index
-sidebar_position: -63
+title: mod
+sidebar_position: 10
 ---
 Manage Buf modules.
 
@@ -19,21 +19,21 @@ buf mod [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Subcommands
 
-* [buf mod clear-cache](mod/clear-cache.md)	 - Clears the Buf module cache.
-* [buf mod init](mod/init.md)	 - Initializes and writes a new buf.yaml configuration file.
-* [buf mod ls-breaking-rules](mod/ls-breaking-rules.md)	 - List breaking rules.
-* [buf mod ls-lint-rules](mod/ls-lint-rules.md)	 - List lint rules.
-* [buf mod open](mod/open.md)	 - Open the module's homepage in a web browser.
-* [buf mod prune](mod/prune.md)	 - Prunes unused dependencies from the buf.lock file.
-* [buf mod update](mod/update.md)	 - Update a module's dependencies by updating the buf.lock file.
+* [buf mod clear-cache](clear-cache.md)	 - Clears the Buf module cache.
+* [buf mod init](init.md)	 - Initializes and writes a new buf.yaml configuration file.
+* [buf mod ls-breaking-rules](ls-breaking-rules.md)	 - List breaking rules.
+* [buf mod ls-lint-rules](ls-lint-rules.md)	 - List lint rules.
+* [buf mod open](open.md)	 - Open the module's homepage in a web browser.
+* [buf mod prune](prune.md)	 - Prunes unused dependencies from the buf.lock file.
+* [buf mod update](update.md)	 - Update a module's dependencies by updating the buf.lock file.
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

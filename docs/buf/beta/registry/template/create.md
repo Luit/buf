@@ -1,7 +1,7 @@
 ---
 id: create
 title: create
-sidebar_position: -32
+sidebar_position: 0
 ---
 Create a new Buf template.
 
@@ -22,11 +22,11 @@ buf beta registry template create <buf.build/owner/templates/template> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry template](../template.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry template](index.md)	 - Manage Protobuf templates on the Buf Schema Registry.

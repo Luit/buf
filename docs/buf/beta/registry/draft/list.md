@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: -7
+sidebar_position: 1
 ---
 List drafts for the specified repository.
 
@@ -23,11 +23,11 @@ buf beta registry draft list <buf.build/owner/repository> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry draft](../draft.md)	 - Manage a repository's drafts.
+* [buf beta registry draft](index.md)	 - Manage a repository's drafts.

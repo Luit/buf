@@ -102,7 +102,7 @@ func Docs(ctx context.Context, command *Command) error {
 	if err != nil {
 		return err
 	}
-	err = generator.GenMarkdownTree(cobraCommand, "docs")
+	err = generator.GenMarkdownTree(cobraCommand, "docs", 0)
 	if err != nil {
 		return err
 	}

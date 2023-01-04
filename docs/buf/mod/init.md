@@ -1,7 +1,7 @@
 ---
 id: init
 title: init
-sidebar_position: -57
+sidebar_position: 1
 ---
 Initializes and writes a new buf.yaml configuration file.
 
@@ -21,11 +21,11 @@ buf mod init [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf mod](../mod.md)	 - Manage Buf modules.
+* [buf mod](index.md)	 - Manage Buf modules.

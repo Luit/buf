@@ -1,7 +1,7 @@
 ---
 id: ls-files
-title: ls files
-sidebar_position: -55
+title: ls-files
+sidebar_position: 9
 ---
 List all Protobuf files for the input.
 
@@ -33,11 +33,11 @@ buf ls-files <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

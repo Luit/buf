@@ -1,7 +1,7 @@
 ---
 id: build
 title: build
-sidebar_position: -49
+sidebar_position: 3
 ---
 Build all Protobuf files from the specified input and output a Buf image.
 
@@ -42,11 +42,11 @@ buf build <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

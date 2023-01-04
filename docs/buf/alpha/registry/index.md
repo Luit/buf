@@ -1,19 +1,18 @@
 ---
-id: delete
-title: delete
-sidebar_position: 0
+id: index
+title: registry
+sidebar_position: 2
 ---
-Delete a draft of a BSR repository by name.
+Manage assets on the Buf Schema Registry.
 
 ```
-buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
+buf alpha registry [flags]
 ```
 
 ### Flags
 
 ```
-      --force   Force deletion without confirming. Use with caution.
-  -h, --help    help for delete
+  -h, --help   help for registry
 ```
 
 ### Flags inherited from parent commands
@@ -25,6 +24,10 @@ buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
   -v, --verbose             Turn on verbose mode.
 ```
 
+### Subcommands
+
+* [buf alpha registry token](token/index.md)	 - Manage user tokens.
+
 ### Parent Command
 
-* [buf beta registry draft](index.md)	 - Manage a repository's drafts.
+* [buf alpha](index.md)	 - Alpha commands. Unstable and recommended only for experimentation. These may be deleted.

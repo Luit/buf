@@ -1,19 +1,20 @@
 ---
-id: delete
-title: delete
+id: create
+title: create
 sidebar_position: 0
 ---
-Delete a draft of a BSR repository by name.
+Create a new token for a user.
 
 ```
-buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
+buf alpha registry token create <buf.build> [flags]
 ```
 
 ### Flags
 
 ```
-      --force   Force deletion without confirming. Use with caution.
-  -h, --help    help for delete
+  -h, --help           help for create
+      --note string    A human-readable note that identifies the token.
+      --ttl duration   How long the token should live. Set to 0 for no expiry. (default 720h0m0s)
 ```
 
 ### Flags inherited from parent commands
@@ -27,4 +28,4 @@ buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
 
 ### Parent Command
 
-* [buf beta registry draft](index.md)	 - Manage a repository's drafts.
+* [buf alpha registry token](index.md)	 - Manage user tokens.

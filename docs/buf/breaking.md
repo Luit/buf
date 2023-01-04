@@ -1,7 +1,7 @@
 ---
 id: breaking
 title: breaking
-sidebar_position: -48
+sidebar_position: 2
 ---
 Verify that the input location has no breaking changes compared to the against location.
 
@@ -41,11 +41,11 @@ buf breaking <input> --against <against-input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

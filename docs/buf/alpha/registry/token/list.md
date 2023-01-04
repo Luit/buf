@@ -1,12 +1,12 @@
 ---
 id: list
 title: list
-sidebar_position: 1
+sidebar_position: 3
 ---
-List tags for the specified repository.
+List my tokens.
 
 ```
-buf beta registry tag list <buf.build/owner/repository> [flags]
+buf alpha registry token list <buf.build> [flags]
 ```
 
 ### Flags
@@ -30,4 +30,4 @@ buf beta registry tag list <buf.build/owner/repository> [flags]
 
 ### Parent Command
 
-* [buf beta registry tag](index.md)	 - Manage a repository's tags.
+* [buf alpha registry token](index.md)	 - Manage user tokens.

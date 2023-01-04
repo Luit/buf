@@ -1,19 +1,20 @@
 ---
 id: delete
 title: delete
-sidebar_position: 0
+sidebar_position: 1
 ---
-Delete a draft of a BSR repository by name.
+Delete a token by ID.
 
 ```
-buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
+buf alpha registry token delete <buf.build> [flags]
 ```
 
 ### Flags
 
 ```
-      --force   Force deletion without confirming. Use with caution.
-  -h, --help    help for delete
+      --force             Force deletion without confirming. Use with caution.
+  -h, --help              help for delete
+      --token-id string   The ID of the token to delete.
 ```
 
 ### Flags inherited from parent commands
@@ -27,4 +28,4 @@ buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
 
 ### Parent Command
 
-* [buf beta registry draft](index.md)	 - Manage a repository's drafts.
+* [buf alpha registry token](index.md)	 - Manage user tokens.

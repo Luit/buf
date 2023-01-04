@@ -1,7 +1,7 @@
 ---
 id: delete
 title: delete
-sidebar_position: -10
+sidebar_position: 1
 ---
 Delete an organization by name on the BSR.
 
@@ -20,11 +20,11 @@ buf beta registry organization delete <buf.build/organization> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry organization](../organization.md)	 - Manage organizations.
+* [buf beta registry organization](index.md)	 - Manage organizations.

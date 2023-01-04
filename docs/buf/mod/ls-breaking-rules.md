@@ -1,7 +1,7 @@
 ---
 id: ls-breaking-rules
-title: ls breaking rules
-sidebar_position: -58
+title: ls-breaking-rules
+sidebar_position: 2
 ---
 List breaking rules.
 
@@ -23,11 +23,11 @@ buf mod ls-breaking-rules [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf mod](../mod.md)	 - Manage Buf modules.
+* [buf mod](index.md)	 - Manage Buf modules.

@@ -1,7 +1,7 @@
 ---
 id: format
 title: format
-sidebar_position: -52
+sidebar_position: 6
 ---
 Format all Protobuf files from the specified input and output the result.
 
@@ -119,11 +119,11 @@ buf format <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

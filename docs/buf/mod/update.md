@@ -1,7 +1,7 @@
 ---
 id: update
 title: update
-sidebar_position: -62
+sidebar_position: 6
 ---
 Update a module's dependencies by updating the buf.lock file.
 
@@ -26,11 +26,11 @@ buf mod update <directory> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf mod](../mod.md)	 - Manage Buf modules.
+* [buf mod](index.md)	 - Manage Buf modules.

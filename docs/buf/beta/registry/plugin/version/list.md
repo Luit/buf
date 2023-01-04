@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: -18
+sidebar_position: 0
 ---
 List versions for the specified plugin.
 
@@ -23,11 +23,11 @@ buf beta registry plugin version list <buf.build/owner/plugins/plugin> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry plugin version](../version.md)	 - Manage Protobuf plugin versions.
+* [buf beta registry plugin version](index.md)	 - Manage Protobuf plugin versions.

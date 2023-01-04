@@ -1,7 +1,7 @@
 ---
 id: migrate-v1beta1
-title: migrate v1beta1
-sidebar_position: -2
+title: migrate-v1beta1
+sidebar_position: 1
 ---
 Migrate any v1beta1 configuration files in the directory to the latest version.
 
@@ -25,11 +25,11 @@ buf beta migrate-v1beta1 <directory> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta](../beta.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.

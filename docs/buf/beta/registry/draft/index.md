@@ -1,7 +1,7 @@
 ---
 id: index
-title: index
-sidebar_position: -8
+title: draft
+sidebar_position: 1
 ---
 Manage a repository's drafts.
 
@@ -19,16 +19,16 @@ buf beta registry draft [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Subcommands
 
-* [buf beta registry draft delete](draft/delete.md)	 - Delete a draft of a BSR repository by name.
-* [buf beta registry draft list](draft/list.md)	 - List drafts for the specified repository.
+* [buf beta registry draft delete](delete.md)	 - Delete a draft of a BSR repository by name.
+* [buf beta registry draft list](list.md)	 - List drafts for the specified repository.
 
 ### Parent Command
 
-* [buf beta registry](../registry.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.

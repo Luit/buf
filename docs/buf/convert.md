@@ -1,7 +1,7 @@
 ---
 id: convert
 title: convert
-sidebar_position: -50
+sidebar_position: 4
 ---
 Convert a message from binary to JSON or vice versa
 
@@ -60,11 +60,11 @@ buf convert <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI

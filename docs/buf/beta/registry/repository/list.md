@@ -1,7 +1,7 @@
 ---
 id: list
 title: list
-sidebar_position: -25
+sidebar_position: 4
 ---
 List BSR repositories.
 
@@ -23,11 +23,11 @@ buf beta registry repository list <buf.build> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry repository](../repository.md)	 - Manage repositories.
+* [buf beta registry repository](index.md)	 - Manage repositories.

@@ -1,7 +1,7 @@
 ---
 id: index
-title: index
-sidebar_position: -45
+title: registry
+sidebar_position: 2
 ---
 Manage assets on the Buf Schema Registry.
 
@@ -19,22 +19,22 @@ buf beta registry [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Subcommands
 
-* [buf beta registry commit](registry/commit.md)	 - Manage a repository's commits.
-* [buf beta registry draft](registry/draft.md)	 - Manage a repository's drafts.
-* [buf beta registry organization](registry/organization.md)	 - Manage organizations.
-* [buf beta registry plugin](registry/plugin.md)	 - Manage Protobuf plugins.
-* [buf beta registry repository](registry/repository.md)	 - Manage repositories.
-* [buf beta registry tag](registry/tag.md)	 - Manage a repository's tags.
-* [buf beta registry template](registry/template.md)	 - Manage Protobuf templates on the Buf Schema Registry.
-* [buf beta registry webhook](registry/webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
+* [buf beta registry commit](commit/index.md)	 - Manage a repository's commits.
+* [buf beta registry draft](draft/index.md)	 - Manage a repository's drafts.
+* [buf beta registry organization](organization/index.md)	 - Manage organizations.
+* [buf beta registry plugin](plugin/index.md)	 - Manage Protobuf plugins.
+* [buf beta registry repository](repository/index.md)	 - Manage repositories.
+* [buf beta registry tag](tag/index.md)	 - Manage a repository's tags.
+* [buf beta registry template](template/index.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry webhook](webhook/index.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
 
 ### Parent Command
 
-* [buf beta](../beta.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.

@@ -1,7 +1,7 @@
 ---
 id: create
 title: create
-sidebar_position: -41
+sidebar_position: 0
 ---
 Create a repository webhook.
 
@@ -24,11 +24,11 @@ buf beta registry webhook create [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry webhook](../webhook.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
+* [buf beta registry webhook](index.md)	 - Manage webhooks for a repository on the Buf Schema Registry.

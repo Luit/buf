@@ -1,7 +1,7 @@
 ---
 id: create
 title: create
-sidebar_position: -29
+sidebar_position: 0
 ---
 Create a tag for the specified commit.
 
@@ -20,11 +20,11 @@ buf beta registry tag create <buf.build/owner/repository:commit> <tag> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta registry tag](../tag.md)	 - Manage a repository's tags.
+* [buf beta registry tag](index.md)	 - Manage a repository's tags.

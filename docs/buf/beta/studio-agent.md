@@ -1,7 +1,7 @@
 ---
 id: studio-agent
-title: studio agent
-sidebar_position: -46
+title: studio-agent
+sidebar_position: 3
 ---
 Run an HTTP(S) server as the Studio agent.
 
@@ -29,11 +29,11 @@ buf beta studio-agent [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf beta](../beta.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.

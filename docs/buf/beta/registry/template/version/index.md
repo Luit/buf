@@ -1,7 +1,7 @@
 ---
 id: index
-title: index
-sidebar_position: -39
+title: version
+sidebar_position: 5
 ---
 Manage Protobuf template versions.
 
@@ -19,16 +19,16 @@ buf beta registry template version [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Subcommands
 
-* [buf beta registry template version create](version/create.md)	 - Create a new template version.
-* [buf beta registry template version list](version/list.md)	 - List versions for the specified template.
+* [buf beta registry template version create](create.md)	 - Create a new template version.
+* [buf beta registry template version list](list.md)	 - List versions for the specified template.
 
 ### Parent Command
 
-* [buf beta registry template](../template.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry template](index.md)	 - Manage Protobuf templates on the Buf Schema Registry.

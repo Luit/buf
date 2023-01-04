@@ -1,7 +1,7 @@
 ---
 id: generate
 title: generate
-sidebar_position: -53
+sidebar_position: 7
 ---
 Generate stubs for protoc plugins using a template.
 
@@ -152,11 +152,11 @@ buf generate <input> [flags]
 
 ```
       --debug               Turn on debug logging.
-      --log-format string   The log format [text,color,json]. (default "color")
+      --log_format string   The log format [text,color,json]. (default "color")
       --timeout duration    The duration until timing out. (default 2m0s)
   -v, --verbose             Turn on verbose mode.
 ```
 
 ### Parent Command
 
-* [buf](../buf.md)	 - The Buf CLI
+* [buf](index.md)	 - The Buf CLI
