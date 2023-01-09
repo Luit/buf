@@ -88,6 +88,11 @@ enum EventType {
   EVENT_TYPE_USER_DEACTIVATED = 17;
   EVENT_TYPE_USER_LOGGED_IN = 18;
   EVENT_TYPE_USER_LOGGED_OUT = 19;
+  EVENT_TYPE_CURATED_PLUGIN_EXECUTION = 23;
+  EVENT_TYPE_MODULE_DOWNLOAD = 24;
+  EVENT_TYPE_SEARCH_EXECUTION = 25;
+  EVENT_TYPE_TOKEN_CREATED = 26;
+  EVENT_TYPE_TOKEN_DELETED = 27;
 }
 
 // EventMetadata provides additional details about the audited event.
@@ -140,6 +145,11 @@ message Event {
     PayloadCuratedPluginCreated curated_plugin_created = 26;
     PayloadOrganizationIDPGroupAdded idp_group_added = 27;
     PayloadOrganizationIDPGroupRemoved idp_group_removed = 28;
+    PayloadCuratedPluginExecution plugin_execution = 29;
+    PayloadModuleDownload module_download = 30;
+    PayloadSearchExecution search_execution = 31;
+    PayloadTokenCreated token_created = 32;
+    PayloadTokenDeleted token_deleted = 33;
   }
 }
 
@@ -319,3 +329,13 @@ message PayloadCuratedPluginCreated {
   // owner_name is the name of the owner of the plugin.
   string owner_name = 2;
 }
+
+message PayloadCuratedPluginExecution {}
+
+message PayloadModuleDownload {}
+
+message PayloadSearchExecution {}
+
+message PayloadTokenCreated {}
+
+message PayloadTokenDeleted {}
