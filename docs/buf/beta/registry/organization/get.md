@@ -27,4 +27,4 @@ buf beta registry organization get <buf.build/organization> [flags]
 
 ### Parent Command
 
-* [buf beta registry organization](index.md)	 - Manage organizations.
+* [buf beta registry organization](index)	 - Manage organizations.

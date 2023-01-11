@@ -27,4 +27,4 @@ buf beta registry tag create <buf.build/owner/repository:commit> <tag> [flags]
 
 ### Parent Command
 
-* [buf beta registry tag](index.md)	 - Manage a repository's tags.
+* [buf beta registry tag](index)	 - Manage a repository's tags.

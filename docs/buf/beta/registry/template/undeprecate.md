@@ -26,4 +26,4 @@ buf beta registry template undeprecate <buf.build/owner/templates/template> [fla
 
 ### Parent Command
 
-* [buf beta registry template](index.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry template](index)	 - Manage Protobuf templates on the Buf Schema Registry.

@@ -54,4 +54,4 @@ buf alpha protoc <proto_file1> <proto_file2> ... [flags]
 
 ### Parent Command
 
-* [buf alpha](index.md)	 - Alpha commands. Unstable and recommended only for experimentation. These may be deleted.
+* [buf alpha](index)	 - Alpha commands. Unstable and recommended only for experimentation. These may be deleted.

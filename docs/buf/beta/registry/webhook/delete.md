@@ -28,4 +28,4 @@ buf beta registry webhook delete [flags]
 
 ### Parent Command
 
-* [buf beta registry webhook](index.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
+* [buf beta registry webhook](index)	 - Manage webhooks for a repository on the Buf Schema Registry.

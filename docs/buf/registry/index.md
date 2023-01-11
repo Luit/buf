@@ -26,9 +26,9 @@ buf registry [flags]
 
 ### Subcommands
 
-* [buf registry login](login.md)	 - Log in to the Buf Schema Registry.
-* [buf registry logout](logout.md)	 - Log out of the Buf Schema Registry.
+* [buf registry login](login)	 - Log in to the Buf Schema Registry.
+* [buf registry logout](logout)	 - Log out of the Buf Schema Registry.
 
 ### Parent Command
 
-* [buf](index.md)	 - The Buf CLI
+* [buf](index)	 - The Buf CLI

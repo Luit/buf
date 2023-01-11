@@ -26,11 +26,11 @@ buf alpha registry token [flags]
 
 ### Subcommands
 
-* [buf alpha registry token create](create.md)	 - Create a new token for a user.
-* [buf alpha registry token delete](delete.md)	 - Delete a token by ID.
-* [buf alpha registry token get](get.md)	 - Get a token by ID.
-* [buf alpha registry token list](list.md)	 - List my tokens.
+* [buf alpha registry token create](create)	 - Create a new token for a user.
+* [buf alpha registry token delete](delete)	 - Delete a token by ID.
+* [buf alpha registry token get](get)	 - Get a token by ID.
+* [buf alpha registry token list](list)	 - List my tokens.
 
 ### Parent Command
 
-* [buf alpha registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf alpha registry](index)	 - Manage assets on the Buf Schema Registry.

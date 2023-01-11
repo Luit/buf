@@ -27,4 +27,4 @@ buf beta registry template delete <buf.build/owner/templates/template> [flags]
 
 ### Parent Command
 
-* [buf beta registry template](index.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry template](index)	 - Manage Protobuf templates on the Buf Schema Registry.

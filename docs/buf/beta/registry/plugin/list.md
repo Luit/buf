@@ -30,4 +30,4 @@ buf beta registry plugin list <buf.build> [flags]
 
 ### Parent Command
 
-* [buf beta registry plugin](index.md)	 - Manage Protobuf plugins.
+* [buf beta registry plugin](index)	 - Manage Protobuf plugins.

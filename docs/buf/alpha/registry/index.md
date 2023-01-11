@@ -26,8 +26,8 @@ buf alpha registry [flags]
 
 ### Subcommands
 
-* [buf alpha registry token](token/index.md)	 - Manage user tokens.
+* [buf alpha registry token](token/index)	 - Manage user tokens.
 
 ### Parent Command
 
-* [buf alpha](index.md)	 - Alpha commands. Unstable and recommended only for experimentation. These may be deleted.
+* [buf alpha](index)	 - Alpha commands. Unstable and recommended only for experimentation. These may be deleted.

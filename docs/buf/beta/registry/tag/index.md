@@ -26,9 +26,9 @@ buf beta registry tag [flags]
 
 ### Subcommands
 
-* [buf beta registry tag create](create.md)	 - Create a tag for the specified commit.
-* [buf beta registry tag list](list.md)	 - List tags for the specified repository.
+* [buf beta registry tag create](create)	 - Create a tag for the specified commit.
+* [buf beta registry tag list](list)	 - List tags for the specified repository.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

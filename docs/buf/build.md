@@ -49,4 +49,4 @@ buf build <input> [flags]
 
 ### Parent Command
 
-* [buf](index.md)	 - The Buf CLI
+* [buf](index)	 - The Buf CLI

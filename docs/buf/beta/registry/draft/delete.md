@@ -27,4 +27,4 @@ buf beta registry draft delete <buf.build/owner/repo:draft> [flags]
 
 ### Parent Command
 
-* [buf beta registry draft](index.md)	 - Manage a repository's drafts.
+* [buf beta registry draft](index)	 - Manage a repository's drafts.

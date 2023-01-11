@@ -26,9 +26,9 @@ buf beta registry commit [flags]
 
 ### Subcommands
 
-* [buf beta registry commit get](get.md)	 - Get details about a commit.
-* [buf beta registry commit list](list.md)	 - List commits.
+* [buf beta registry commit get](get)	 - Get details about a commit.
+* [buf beta registry commit list](list)	 - List commits.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

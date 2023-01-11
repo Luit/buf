@@ -30,4 +30,4 @@ buf beta registry commit list <buf.build/owner/repo[:ref]> [flags]
 
 ### Parent Command
 
-* [buf beta registry commit](index.md)	 - Manage a repository's commits.
+* [buf beta registry commit](index)	 - Manage a repository's commits.

@@ -32,4 +32,4 @@ buf beta migrate-v1beta1 <directory> [flags]
 
 ### Parent Command
 
-* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index)	 - Beta commands. Unstable and likely to change.

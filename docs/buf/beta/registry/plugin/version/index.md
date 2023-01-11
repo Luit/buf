@@ -26,8 +26,8 @@ buf beta registry plugin version [flags]
 
 ### Subcommands
 
-* [buf beta registry plugin version list](list.md)	 - List versions for the specified plugin.
+* [buf beta registry plugin version list](list)	 - List versions for the specified plugin.
 
 ### Parent Command
 
-* [buf beta registry plugin](index.md)	 - Manage Protobuf plugins.
+* [buf beta registry plugin](index)	 - Manage Protobuf plugins.

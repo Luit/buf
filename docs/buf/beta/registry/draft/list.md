@@ -30,4 +30,4 @@ buf beta registry draft list <buf.build/owner/repository> [flags]
 
 ### Parent Command
 
-* [buf beta registry draft](index.md)	 - Manage a repository's drafts.
+* [buf beta registry draft](index)	 - Manage a repository's drafts.

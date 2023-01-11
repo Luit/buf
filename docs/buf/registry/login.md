@@ -35,4 +35,4 @@ buf registry login <domain> [flags]
 
 ### Parent Command
 
-* [buf registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf registry](index)	 - Manage assets on the Buf Schema Registry.

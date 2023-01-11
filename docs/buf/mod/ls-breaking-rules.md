@@ -30,4 +30,4 @@ buf mod ls-breaking-rules [flags]
 
 ### Parent Command
 
-* [buf mod](index.md)	 - Manage Buf modules.
+* [buf mod](index)	 - Manage Buf modules.

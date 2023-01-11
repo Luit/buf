@@ -26,15 +26,15 @@ buf beta registry [flags]
 
 ### Subcommands
 
-* [buf beta registry commit](commit/index.md)	 - Manage a repository's commits.
-* [buf beta registry draft](draft/index.md)	 - Manage a repository's drafts.
-* [buf beta registry organization](organization/index.md)	 - Manage organizations.
-* [buf beta registry plugin](plugin/index.md)	 - Manage Protobuf plugins.
-* [buf beta registry repository](repository/index.md)	 - Manage repositories.
-* [buf beta registry tag](tag/index.md)	 - Manage a repository's tags.
-* [buf beta registry template](template/index.md)	 - Manage Protobuf templates on the Buf Schema Registry.
-* [buf beta registry webhook](webhook/index.md)	 - Manage webhooks for a repository on the Buf Schema Registry.
+* [buf beta registry commit](commit/index)	 - Manage a repository's commits.
+* [buf beta registry draft](draft/index)	 - Manage a repository's drafts.
+* [buf beta registry organization](organization/index)	 - Manage organizations.
+* [buf beta registry plugin](plugin/index)	 - Manage Protobuf plugins.
+* [buf beta registry repository](repository/index)	 - Manage repositories.
+* [buf beta registry tag](tag/index)	 - Manage a repository's tags.
+* [buf beta registry template](template/index)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry webhook](webhook/index)	 - Manage webhooks for a repository on the Buf Schema Registry.
 
 ### Parent Command
 
-* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index)	 - Beta commands. Unstable and likely to change.

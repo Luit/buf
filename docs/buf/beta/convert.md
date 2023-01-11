@@ -67,4 +67,4 @@ buf beta convert <input> [flags]
 
 ### Parent Command
 
-* [buf beta](index.md)	 - Beta commands. Unstable and likely to change.
+* [buf beta](index)	 - Beta commands. Unstable and likely to change.

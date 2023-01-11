@@ -27,4 +27,4 @@ buf beta registry repository delete <buf.build/owner/repository> [flags]
 
 ### Parent Command
 
-* [buf beta registry repository](index.md)	 - Manage repositories.
+* [buf beta registry repository](index)	 - Manage repositories.

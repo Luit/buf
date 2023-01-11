@@ -30,4 +30,4 @@ buf beta registry tag list <buf.build/owner/repository> [flags]
 
 ### Parent Command
 
-* [buf beta registry tag](index.md)	 - Manage a repository's tags.
+* [buf beta registry tag](index)	 - Manage a repository's tags.

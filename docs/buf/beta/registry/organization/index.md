@@ -26,10 +26,10 @@ buf beta registry organization [flags]
 
 ### Subcommands
 
-* [buf beta registry organization create](create.md)	 - Create a new organization on the BSR.
-* [buf beta registry organization delete](delete.md)	 - Delete an organization by name on the BSR.
-* [buf beta registry organization get](get.md)	 - Get an organization on the BSR by name.
+* [buf beta registry organization create](create)	 - Create a new organization on the BSR.
+* [buf beta registry organization delete](delete)	 - Delete an organization by name on the BSR.
+* [buf beta registry organization get](get)	 - Get an organization on the BSR by name.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

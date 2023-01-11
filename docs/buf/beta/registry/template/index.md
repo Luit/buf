@@ -26,13 +26,13 @@ buf beta registry template [flags]
 
 ### Subcommands
 
-* [buf beta registry template create](create.md)	 - Create a new Buf template.
-* [buf beta registry template delete](delete.md)	 - Delete a template by name.
-* [buf beta registry template deprecate](deprecate.md)	 - Deprecate a template by name.
-* [buf beta registry template list](list.md)	 - List templates on the specified remote.
-* [buf beta registry template undeprecate](undeprecate.md)	 - Undeprecate a template by name.
-* [buf beta registry template version](version/index.md)	 - Manage Protobuf template versions.
+* [buf beta registry template create](create)	 - Create a new Buf template.
+* [buf beta registry template delete](delete)	 - Delete a template by name.
+* [buf beta registry template deprecate](deprecate)	 - Deprecate a template by name.
+* [buf beta registry template list](list)	 - List templates on the specified remote.
+* [buf beta registry template undeprecate](undeprecate)	 - Undeprecate a template by name.
+* [buf beta registry template version](version/index)	 - Manage Protobuf template versions.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

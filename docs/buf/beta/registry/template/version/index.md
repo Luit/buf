@@ -26,9 +26,9 @@ buf beta registry template version [flags]
 
 ### Subcommands
 
-* [buf beta registry template version create](create.md)	 - Create a new template version.
-* [buf beta registry template version list](list.md)	 - List versions for the specified template.
+* [buf beta registry template version create](create)	 - Create a new template version.
+* [buf beta registry template version list](list)	 - List versions for the specified template.
 
 ### Parent Command
 
-* [buf beta registry template](index.md)	 - Manage Protobuf templates on the Buf Schema Registry.
+* [buf beta registry template](index)	 - Manage Protobuf templates on the Buf Schema Registry.

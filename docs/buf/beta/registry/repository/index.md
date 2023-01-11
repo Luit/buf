@@ -26,14 +26,14 @@ buf beta registry repository [flags]
 
 ### Subcommands
 
-* [buf beta registry repository create](create.md)	 - Create a new repository on the BSR.
-* [buf beta registry repository delete](delete.md)	 - Delete a BSR repository by name.
-* [buf beta registry repository deprecate](deprecate.md)	 - Deprecate a repository on the BSR.
-* [buf beta registry repository get](get.md)	 - Get a BSR repository by name.
-* [buf beta registry repository list](list.md)	 - List BSR repositories.
-* [buf beta registry repository undeprecate](undeprecate.md)	 - Undeprecate a BSR repository.
-* [buf beta registry repository update](update.md)	 - Update a BSR repository settings.
+* [buf beta registry repository create](create)	 - Create a new repository on the BSR.
+* [buf beta registry repository delete](delete)	 - Delete a BSR repository by name.
+* [buf beta registry repository deprecate](deprecate)	 - Deprecate a repository on the BSR.
+* [buf beta registry repository get](get)	 - Get a BSR repository by name.
+* [buf beta registry repository list](list)	 - List BSR repositories.
+* [buf beta registry repository undeprecate](undeprecate)	 - Undeprecate a BSR repository.
+* [buf beta registry repository update](update)	 - Update a BSR repository settings.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

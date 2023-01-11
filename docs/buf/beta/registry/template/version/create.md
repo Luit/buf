@@ -29,4 +29,4 @@ buf beta registry template version create <buf.build/owner/templates/template> [
 
 ### Parent Command
 
-* [buf beta registry template version](index.md)	 - Manage Protobuf template versions.
+* [buf beta registry template version](index)	 - Manage Protobuf template versions.

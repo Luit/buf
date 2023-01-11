@@ -26,11 +26,11 @@ buf beta [flags]
 
 ### Subcommands
 
-* [buf beta convert](convert.md)	 - Convert a message from binary to JSON or vice versa
-* [buf beta migrate-v1beta1](migrate-v1beta1.md)	 - Migrate any v1beta1 configuration files in the directory to the latest version.
-* [buf beta registry](registry/index.md)	 - Manage assets on the Buf Schema Registry.
-* [buf beta studio-agent](studio-agent.md)	 - Run an HTTP(S) server as the Studio agent.
+* [buf beta convert](convert)	 - Convert a message from binary to JSON or vice versa
+* [buf beta migrate-v1beta1](migrate-v1beta1)	 - Migrate any v1beta1 configuration files in the directory to the latest version.
+* [buf beta registry](registry/index)	 - Manage assets on the Buf Schema Registry.
+* [buf beta studio-agent](studio-agent)	 - Run an HTTP(S) server as the Studio agent.
 
 ### Parent Command
 
-* [buf](index.md)	 - The Buf CLI
+* [buf](index)	 - The Buf CLI

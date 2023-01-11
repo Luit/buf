@@ -26,10 +26,10 @@ buf beta registry webhook [flags]
 
 ### Subcommands
 
-* [buf beta registry webhook create](create.md)	 - Create a repository webhook.
-* [buf beta registry webhook delete](delete.md)	 - Delete a repository webhook.
-* [buf beta registry webhook list](list.md)	 - List repository webhooks.
+* [buf beta registry webhook create](create)	 - Create a repository webhook.
+* [buf beta registry webhook delete](delete)	 - Delete a repository webhook.
+* [buf beta registry webhook list](list)	 - List repository webhooks.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.

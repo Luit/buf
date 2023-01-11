@@ -40,4 +40,4 @@ buf alpha plugin push <source> [flags]
 
 ### Parent Command
 
-* [buf alpha plugin](index.md)	 - Manage plugins on the Buf Schema Registry.
+* [buf alpha plugin](index)	 - Manage plugins on the Buf Schema Registry.

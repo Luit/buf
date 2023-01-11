@@ -27,13 +27,13 @@ import (
 )
 
 func GenMarkdownTree(cmd *cobra.Command, dir string) error {
+	if !cmd.IsAvailableCommand() {
+		return nil
+	}
 	for _, c := range cmd.Commands() {
 		if err := GenMarkdownTree(c, dir); err != nil {
 			return err
 		}
-	}
-	if !cmd.IsAvailableCommand() || cmd.IsAdditionalHelpTopicCommand() {
-		return nil
 	}
 	cmdPath := strings.ReplaceAll(cmd.CommandPath(), " ", "/")
 	if cmd.HasSubCommands() {
@@ -64,7 +64,8 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 	}
 	p("---\n")
 	p("id: %s\n", pageId(cmd))
-	p("title: %s\n", cmd.Name())
+	p("title: %s\n", cmd.CommandPath())
+	p("sidebar_label: %s\n", pageName(cmd))
 	p("sidebar_position: %d\n", order(cmd))
 	p("---\n")
 	cmd.InitDefaultHelpCmd()
@@ -110,19 +111,16 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 	if hasSubCommands(cmd) {
 		p("### Subcommands\n\n")
 		children := cmd.Commands()
-		//sort.Slice(children, func(i, j int) bool {
-		//	return children[i].Name() < children[j].Name()
-		//})
 		for _, child := range children {
 			if !child.IsAvailableCommand() || child.IsAdditionalHelpTopicCommand() {
 				continue
 			}
 			commandName := name + " " + child.Name()
-			link := commandName + ".md"
+			link := commandName
 			link = strings.ReplaceAll(link, " ", "-")
-			childLink := child.Name() + ".md"
-			if child.HasSubCommands() {
-				childLink = child.Name() + "/index.md"
+			childLink := child.Name()
+			if hasSubCommands(child) {
+				childLink = child.Name() + "/index"
 			}
 			p("* [%s](%s)\t - %s\n", commandName, childLink, child.Short)
 		}
@@ -131,20 +129,18 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 	// Parent Command
 	if cmd.HasParent() {
 		p("### Parent Command\n\n")
-		if cmd.HasParent() {
-			parent := cmd.Parent()
-			parentName := parent.CommandPath()
-			link := "index.md"
-			if cmd.HasSubCommands() {
-				link = "../" + link
-			}
-			p("* [%s](%s)\t - %s\n", parentName, "index.md", parent.Short)
-			cmd.VisitParents(func(c *cobra.Command) {
-				if c.DisableAutoGenTag {
-					cmd.DisableAutoGenTag = c.DisableAutoGenTag
-				}
-			})
+		parent := cmd.Parent()
+		parentName := parent.CommandPath()
+		link := "index"
+		if hasSubCommands(cmd) {
+			link = "../" + link
 		}
+		p("* [%s](%s)\t - %s\n", parentName, link, parent.Short)
+		cmd.VisitParents(func(c *cobra.Command) {
+			if c.DisableAutoGenTag {
+				cmd.DisableAutoGenTag = c.DisableAutoGenTag
+			}
+		})
 	}
 	return err
 }
@@ -152,6 +148,9 @@ func GenMarkdownPage(cmd *cobra.Command, w io.Writer) error {
 func order(cmd *cobra.Command) int {
 	var i int
 	if !cmd.HasParent() {
+		return 0
+	}
+	if hasSubCommands(cmd) {
 		return 0
 	}
 	for _, sibling := range cmd.Parent().Commands() {
@@ -167,8 +166,15 @@ func order(cmd *cobra.Command) int {
 }
 
 func pageId(cmd *cobra.Command) string {
-	if cmd.HasSubCommands() {
+	if hasSubCommands(cmd) {
 		return "index"
+	}
+	return cmd.Name()
+}
+
+func pageName(cmd *cobra.Command) string {
+	if hasSubCommands(cmd) {
+		return "overview"
 	}
 	return cmd.Name()
 }
@@ -181,4 +187,17 @@ func hasSubCommands(cmd *cobra.Command) bool {
 		return true
 	}
 	return false
+}
+
+func isHidden(cmd *cobra.Command) bool {
+	var hidden bool
+	if !cmd.IsAvailableCommand() {
+		hidden = true
+	}
+	cmd.VisitParents(func(parent *cobra.Command) {
+		if !cmd.IsAvailableCommand() {
+			hidden = true
+		}
+	})
+	return hidden
 }

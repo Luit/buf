@@ -30,4 +30,4 @@ buf beta registry plugin version list <buf.build/owner/plugins/plugin> [flags]
 
 ### Parent Command
 
-* [buf beta registry plugin version](index.md)	 - Manage Protobuf plugin versions.
+* [buf beta registry plugin version](index)	 - Manage Protobuf plugin versions.

@@ -30,4 +30,4 @@ buf alpha registry token list <buf.build> [flags]
 
 ### Parent Command
 
-* [buf alpha registry token](index.md)	 - Manage user tokens.
+* [buf alpha registry token](index)	 - Manage user tokens.

@@ -26,4 +26,4 @@ buf beta registry plugin undeprecate <buf.build/owner/plugins/plugin> [flags]
 
 ### Parent Command
 
-* [buf beta registry plugin](index.md)	 - Manage Protobuf plugins.
+* [buf beta registry plugin](index)	 - Manage Protobuf plugins.

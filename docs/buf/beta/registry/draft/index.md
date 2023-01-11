@@ -26,9 +26,9 @@ buf beta registry draft [flags]
 
 ### Subcommands
 
-* [buf beta registry draft delete](delete.md)	 - Delete a draft of a BSR repository by name.
-* [buf beta registry draft list](list.md)	 - List drafts for the specified repository.
+* [buf beta registry draft delete](delete)	 - Delete a draft of a BSR repository by name.
+* [buf beta registry draft list](list)	 - List drafts for the specified repository.
 
 ### Parent Command
 
-* [buf beta registry](index.md)	 - Manage assets on the Buf Schema Registry.
+* [buf beta registry](index)	 - Manage assets on the Buf Schema Registry.
