@@ -18,7 +18,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-
 	"github.com/bufbuild/buf/private/buf/bufcli"
 	"github.com/bufbuild/buf/private/buf/bufconvert"
 	"github.com/bufbuild/buf/private/bufpkg/bufanalysis"
@@ -27,7 +26,7 @@ import (
 	"github.com/bufbuild/buf/private/pkg/app/appcmd"
 	"github.com/bufbuild/buf/private/pkg/app/appflag"
 	"github.com/bufbuild/buf/private/pkg/stringutil"
-	"github.com/spf13/cobra"
+	cobra "github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
 
@@ -65,8 +64,7 @@ $ buf convert example.proto --type=Foo.proto --from=payload.json --to=output.bin
 
 ### <input>, "--from" and "to" accept formatting options
 
-$ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json
-
+` + code(`$ buf convert example.proto#format=bin --type=buf.Foo --from=payload#format=json --to=out#format=json`) + `
 ### Both <input> and "--from" accept stdin redirecting
 
 $ buf convert <(buf build -o -)#format=bin --type=foo.Bar --from=<(echo "{\"one\":\"55\"}")#format=json
@@ -240,4 +238,8 @@ func inverseEncoding(encoding bufconvert.MessageEncoding) (bufconvert.MessageEnc
 	default:
 		return 0, fmt.Errorf("unknown message encoding %v", encoding)
 	}
+}
+
+func code(s string) string {
+	return "\n```\n" + s + "\n```\n"
 }
