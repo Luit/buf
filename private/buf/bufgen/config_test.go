@@ -1,4 +1,4 @@
-// Copyright 2020-2022 Buf Technologies, Inc.
+// Copyright 2020-2023 Buf Technologies, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -171,7 +171,7 @@ func TestReadConfigV1(t *testing.T) {
 			CcEnableArenas:      &truth,
 			JavaMultipleFiles:   &truth,
 			JavaStringCheckUtf8: &truth,
-			JavaPackagePrefix: &JavaPackagePrefixConfig{
+			JavaPackagePrefixConfig: &JavaPackagePrefixConfig{
 				Default:  "org",
 				Except:   make([]bufmoduleref.ModuleIdentity, 0),
 				Override: make(map[bufmoduleref.ModuleIdentity]string),
@@ -252,7 +252,7 @@ func TestReadConfigV1(t *testing.T) {
 	require.NoError(t, err)
 	successConfig6 := &Config{
 		ManagedConfig: &ManagedConfig{
-			JavaPackagePrefix: &JavaPackagePrefixConfig{
+			JavaPackagePrefixConfig: &JavaPackagePrefixConfig{
 				Default:  "org",
 				Except:   []bufmoduleref.ModuleIdentity{moduleIdentity},
 				Override: make(map[bufmoduleref.ModuleIdentity]string),
@@ -278,36 +278,61 @@ func TestReadConfigV1(t *testing.T) {
 		},
 		ManagedConfig: nil,
 	}
+	moduleIdentity1 := mustCreateModuleIdentity(
+		t,
+		"someremote.com",
+		"owner",
+		"repo",
+	)
+	moduleIdentity2 := mustCreateModuleIdentity(
+		t,
+		"someremote.com",
+		"owner",
+		"foo",
+	)
+	moduleIdentity3 := mustCreateModuleIdentity(
+		t,
+		"someremote.com",
+		"owner",
+		"bar",
+	)
+	moduleIdentity4 := mustCreateModuleIdentity(
+		t,
+		"someremote.com",
+		"owner",
+		"baz",
+	)
 	successConfig8 := &Config{
 		ManagedConfig: &ManagedConfig{
 			CsharpNameSpaceConfig: &CsharpNameSpaceConfig{
 				Except: []bufmoduleref.ModuleIdentity{
-					mustCreateModuleIdentity(
-						t,
-						"someremote.com",
-						"owner",
-						"repo",
-					),
+					moduleIdentity1,
 				},
 				Override: map[bufmoduleref.ModuleIdentity]string{
-					mustCreateModuleIdentity(
-						t,
-						"someremote.com",
-						"owner",
-						"foo",
-					): "a",
-					mustCreateModuleIdentity(
-						t,
-						"someremote.com",
-						"owner",
-						"bar",
-					): "b",
-					mustCreateModuleIdentity(
-						t,
-						"someremote.com",
-						"owner",
-						"baz",
-					): "c",
+					moduleIdentity2: "a",
+					moduleIdentity3: "b",
+					moduleIdentity4: "c",
+				},
+			},
+			ObjcClassPrefixConfig: &ObjcClassPrefixConfig{
+				Default: "default",
+				Except: []bufmoduleref.ModuleIdentity{
+					moduleIdentity1,
+				},
+				Override: map[bufmoduleref.ModuleIdentity]string{
+					moduleIdentity2: "a",
+					moduleIdentity3: "b",
+					moduleIdentity4: "c",
+				},
+			},
+			RubyPackageConfig: &RubyPackageConfig{
+				Except: []bufmoduleref.ModuleIdentity{
+					moduleIdentity1,
+				},
+				Override: map[bufmoduleref.ModuleIdentity]string{
+					moduleIdentity2: "x",
+					moduleIdentity3: "y",
+					moduleIdentity4: "z",
 				},
 			},
 		},
@@ -523,27 +548,39 @@ func TestReadConfigV1(t *testing.T) {
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(filepath.Join("testdata", "v1", "gen_success8.yaml")))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	data, err = os.ReadFile(filepath.Join("testdata", "v1", "gen_success8.yaml"))
 	require.NoError(t, err)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride((string(data))))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(filepath.Join("testdata", "v1", "gen_success8.json")))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	data, err = os.ReadFile(filepath.Join("testdata", "v1", "gen_success8.json"))
 	require.NoError(t, err)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(string(data)))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(filepath.Join("testdata", "v1", "gen_success8.yml")))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	data, err = os.ReadFile(filepath.Join("testdata", "v1", "gen_success8.yml"))
 	require.NoError(t, err)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(string(data)))
 	require.NoError(t, err)
 	assertConfigsWithEqualCsharpnamespace(t, successConfig8, config)
+	assertConfigsWithEqualObjcPrefix(t, successConfig8, config)
+	assertConfigsWithEqualRubyPackage(t, successConfig8, config)
 	config, err = ReadConfig(ctx, nopLogger, provider, readBucket, ReadConfigWithOverride(filepath.Join("testdata", "v1", "gen_success9.yaml")))
 	require.NoError(t, err)
 	assertConfigsWithEqualOptimizeFor(t, successConfig9, config)
@@ -581,6 +618,8 @@ func TestReadConfigV1(t *testing.T) {
 	testReadConfigError(t, nopLogger, provider, readBucket, filepath.Join("testdata", "v1", "gen_error10.yaml"))
 	testReadConfigError(t, nopLogger, provider, readBucket, filepath.Join("testdata", "v1", "gen_error11.yaml"))
 	testReadConfigError(t, nopLogger, provider, readBucket, filepath.Join("testdata", "v1", "gen_error12.yaml"))
+	testReadConfigError(t, nopLogger, provider, readBucket, filepath.Join("testdata", "v1", "gen_error13.yaml"))
+	testReadConfigError(t, nopLogger, provider, readBucket, filepath.Join("testdata", "v1", "gen_error14.yaml"))
 
 	successConfig = &Config{
 		PluginConfigs: []*PluginConfig{
@@ -647,6 +686,19 @@ func mustCreateModuleIdentity(
 	return moduleIdentity
 }
 
+func assertConfigsWithEqualObjcPrefix(t *testing.T, successConfig *Config, config *Config) {
+	require.Equal(t, successConfig.PluginConfigs, config.PluginConfigs)
+	require.NotNil(t, successConfig.ManagedConfig)
+	require.NotNil(t, config.ManagedConfig)
+	require.NotNil(t, successConfig.ManagedConfig.ObjcClassPrefixConfig)
+	require.NotNil(t, config.ManagedConfig.ObjcClassPrefixConfig)
+	successObjcPrefixConfig := successConfig.ManagedConfig.ObjcClassPrefixConfig
+	objcPrefixConfig := config.ManagedConfig.ObjcClassPrefixConfig
+	require.Equal(t, successObjcPrefixConfig.Default, objcPrefixConfig.Default)
+	require.Equal(t, successObjcPrefixConfig.Except, objcPrefixConfig.Except)
+	assertEqualModuleIdentityKeyedMaps(t, successObjcPrefixConfig.Override, objcPrefixConfig.Override)
+}
+
 func assertConfigsWithEqualCsharpnamespace(t *testing.T, successConfig *Config, config *Config) {
 	require.Equal(t, successConfig.PluginConfigs, config.PluginConfigs)
 	require.NotNil(t, successConfig.ManagedConfig)
@@ -657,6 +709,18 @@ func assertConfigsWithEqualCsharpnamespace(t *testing.T, successConfig *Config, 
 	csharpConfig := config.ManagedConfig.CsharpNameSpaceConfig
 	require.Equal(t, successCsharpConfig.Except, csharpConfig.Except)
 	assertEqualModuleIdentityKeyedMaps(t, successCsharpConfig.Override, csharpConfig.Override)
+}
+
+func assertConfigsWithEqualRubyPackage(t *testing.T, successConfig *Config, config *Config) {
+	require.Equal(t, successConfig.PluginConfigs, config.PluginConfigs)
+	require.NotNil(t, successConfig.ManagedConfig)
+	require.NotNil(t, config.ManagedConfig)
+	require.NotNil(t, successConfig.ManagedConfig.RubyPackageConfig)
+	require.NotNil(t, config.ManagedConfig.RubyPackageConfig)
+	successRubyConfig := successConfig.ManagedConfig.RubyPackageConfig
+	rubyConfig := config.ManagedConfig.RubyPackageConfig
+	require.Equal(t, successRubyConfig.Except, rubyConfig.Except)
+	assertEqualModuleIdentityKeyedMaps(t, successRubyConfig.Override, rubyConfig.Override)
 }
 
 func assertConfigsWithEqualOptimizeFor(t *testing.T, successConfig *Config, config *Config) {
