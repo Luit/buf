@@ -22,6 +22,7 @@ import (
 	"strings"
 
 	"github.com/bufbuild/buf/private/pkg/app"
+	"github.com/bufbuild/buf/private/pkg/app/appcmd/generator"
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 	"github.com/spf13/pflag"
@@ -89,6 +90,24 @@ func NewInvalidArgumentErrorf(format string, args ...interface{}) error {
 // Main runs the application using the OS container and calling os.Exit on the return value of Run.
 func Main(ctx context.Context, command *Command) {
 	app.Main(ctx, newRunFunc(command))
+}
+
+func Docs(ctx context.Context, command *Command) error {
+	var runErrAddr error
+	container, err := app.NewContainerForOS()
+	if err != nil {
+		return err
+	}
+	cobraCommand, err := commandToCobra(ctx, container, command, &runErrAddr)
+	if err != nil {
+		return err
+	}
+	err = generator.GenMarkdownTree(cobraCommand, "../docs.buf.build/docs/reference") // TODO
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Run runs the application using the container.
@@ -259,6 +278,7 @@ func commandToCobra(
 		Args:       command.Args,
 		Deprecated: command.Deprecated,
 		Hidden:     command.Hidden,
+		Version:    command.Version,
 		Short:      strings.TrimSpace(command.Short),
 	}
 	cobraCommand.SetHelpFunc(

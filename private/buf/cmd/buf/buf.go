@@ -88,6 +88,11 @@ func Main(name string) {
 	appcmd.Main(context.Background(), NewRootCommand(name))
 }
 
+// Doc generates documentation for the buf command.
+func Docs(name string) error {
+	return appcmd.Docs(context.Background(), NewRootCommand(name))
+}
+
 // NewRootCommand returns a new root command.
 //
 // This is public for use in testing.
