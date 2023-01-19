@@ -339,16 +339,16 @@ message PayloadCuratedPluginExecution {
   string curated_plugin_id = 3;
   // repository_id is the id of the repository that the plugin executed against.
   string repository_id = 4;
-  // repository_name is the name of the repository that the plugin executed against.
-  string repository_name = 5;
-  // owner_id is the id of the owner of the repository that the plugin executed against.
-  string repository_owner_id = 6;
-  // owner_name is the name of the owner of the plugin.
-  string owner_name = 7;
+  // repository_owner_id is the id of the owner of the repository that the plugin executed against.
+  string repository_owner_id = 5;
   // request_source represents the type of action that initiated an execution request
-  GenerationRequestSourceType request_source = 8;
+  GenerationRequestSourceType request_source = 6;
   // cached is true when the result of a generation request was found in a cache.
-  bool cached = 9;
+  bool cached = 7;
+  // trace_id is the ID of the trace associated with the execution, if any.
+  string trace_id = 8;
+  // span_id is the ID of the span associated with the execution, if any.
+  string span_id = 9;
   // error captures any issues with the generation request
   string error = 10;
   // plugin_version_id is the ID of a legacy plugin to be executed.
@@ -361,4 +361,10 @@ message PayloadCuratedPluginExecution {
   int64 generated_code_size = 14;
   // generated_code_files is the total number of generated files.
   int64 generated_code_files = 15;
+  // repository_remote
+  string repository_remote = 16;
+  // repository_owner
+  string repository_owner = 17;
+  // repository_name
+  string repository_name = 18;
 }
