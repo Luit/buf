@@ -337,34 +337,38 @@ message PayloadCuratedPluginExecution {
   google.protobuf.Timestamp end_time = 2;
   // curated_plugin_id is the id of the curated plugin that was executed.
   string curated_plugin_id = 3;
+  // curated_plugin_name is the name of the curated plugin that was executed.
+  string curated_plugin_name = 4;
+  // curated_plugin_version is the version of the curated plugin that was executed.
+  string curated_plugin_version = 5;
   // repository_id is the id of the repository that the plugin executed against.
-  string repository_id = 4;
+  string repository_id = 6;
   // repository_owner_id is the id of the owner of the repository that the plugin executed against.
-  string repository_owner_id = 5;
+  string repository_owner_id = 7;
   // request_source represents the type of action that initiated an execution request
-  GenerationRequestSourceType request_source = 6;
+  GenerationRequestSourceType request_source = 8;
   // cached is true when the result of a generation request was found in a cache.
-  bool cached = 7;
+  bool cached = 9;
   // trace_id is the ID of the trace associated with the execution, if any.
-  string trace_id = 8;
+  string trace_id = 10;
   // span_id is the ID of the span associated with the execution, if any.
-  string span_id = 9;
+  string span_id = 11;
   // error captures any issues with the generation request
-  string error = 10;
+  string error = 12;
   // plugin_version_id is the ID of a legacy plugin to be executed.
-  string plugin_version_id = 11;
+  string plugin_version_id = 13;
   // incoming_image_size is the size of the incoming buf Image in bytes.
-  int64 incoming_image_size = 12;
+  int64 incoming_image_size = 14;
   // incoming_image_files is the total number of proto files within the Image.
-  int64 incoming_image_files = 13;
+  int64 incoming_image_files = 15;
   // generated_code_size is the size of the generated code in bytes.
-  int64 generated_code_size = 14;
+  int64 generated_code_size = 16;
   // generated_code_files is the total number of generated files.
-  int64 generated_code_files = 15;
+  int64 generated_code_files = 17;
   // repository_remote
-  string repository_remote = 16;
+  string repository_remote = 18;
   // repository_owner
-  string repository_owner = 17;
+  string repository_owner = 19;
   // repository_name
-  string repository_name = 18;
+  string repository_name = 20;
 }
